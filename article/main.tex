@@ -1,0 +1,84 @@
+\documentclass[
+    a4paper,
+    man,
+    floatsintext
+]{style}
+\usepackage[T1]{fontenc}
+\usepackage[american]{babel}
+\usepackage[style=apa,backend=biber,sorting=nyt]{biblatex}
+\NewBibliographyString{unpublished}
+\DefineBibliographyStrings{english}{
+  unpublished = {Unpublished},
+}
+\DefineBibliographyStrings{american}{
+  unpublished = {Unpublished},
+}
+\usepackage[font={footnotesize,it}]{caption}
+\usepackage{csquotes}
+\usepackage{booktabs} 
+\usepackage{tabularx}
+\usepackage{linguex} 
+\usepackage{filestyle}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {./graphics/} }
+%\usepackage{times}
+\usepackage{ragged2e}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\newcommand{\quotes}[1]{``#1''}
+\usepackage[title]{appendix}
+\usepackage{booktabs}
+\providecommand{\firstrefdash}{} %removes dash in references to examples, i.e. (1a) instead of (1-a)
+\addbibresource{sample.bib}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[Title]{Title}
+\author[Author1, Author2] % LEAVE ANONYMOUS
+{\spauthor{Luca Luigi Alberici\\
+  \institute{Bayes Business School}
+  \small{luca-luigi.alberici@bayes.city.ac.uk}
+  }
+  \AND
+\spauthor{Nawfal Khodabacchas\\
+  \institute{Coverys Limited}\\
+  \small{nawfal.khodabacchas@coverys.co.uk}
+  }
+\AND
+\spauthor{Lina Palacios\\
+  \institute{LeWagon GmbH}\\
+  \small{linam.palacios@gmail.com}
+  }
+\AND
+\spauthor{Sarah MacDonnell\\
+  \institute{LCP}\\
+  \small{sarah.macdonnell@lcp.com}
+  }
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The abstract text goes here.
+\end{abstract}
+
+\begin{keywords}
+  keyword 1; keyword 2; keyword 3; keyword 4
+\end{keywords}
+
+\section{Introduction}
+\label{intro}
+To cite: \parencite{lago_spanish_2015,wagers_agreement_2009}.
+
+
+
+\printbibliography
+\begin{appendices}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+%%%%%%
+\section{Appendix title}
+
+\end{appendices}
+
+\end{document}
