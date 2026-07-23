@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.14)  22 JUL 2026 23:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.14)  23 JUL 2026 07:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -838,7 +838,7 @@ Package csquotes Info: Redefining alias 'default' -> 'american'.
 LaTeX Warning: Unused global option(s):
     [man,floatsintext].
 
-No file main.aux.
+(main.aux (theory.aux) (data.aux) (methodology.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
@@ -857,7 +857,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
 LaTeX Font Info:    ... okay on input line 58.
 LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 58.
 LaTeX Font Info:    Trying to load font information for T3+cmr on input line 58.
-(C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/tipa\t3cmr.fd
+ (C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/tipa\t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
 LaTeX Font Info:    ... okay on input line 58.
@@ -969,15 +969,38 @@ LaTeX Warning: Citation 'lago_spanish_2015' on page 1 undefined on input line 71
 
 LaTeX Warning: Citation 'wagers_agreement_2009' on page 1 undefined on input line 71.
 
-
-LaTeX Warning: Empty bibliography on input line 75.
-
 [1
 
 
 Non-PDF special ignored!
 <special> papersize=210mm,297mm
-{C:/Users/luca9/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}] (main.aux)
+{C:/Users/luca9/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}]
+\openout2 = `theory.aux'.
+
+ (theory.tex) [2
+
+]
+\openout2 = `data.aux'.
+
+ (data.tex) [3
+
+
+
+]
+\openout2 = `methodology.aux'.
+
+ (methodology.tex) [4
+
+
+
+]
+
+LaTeX Warning: Empty bibliography on input line 77.
+
+[5
+
+
+] (main.aux (theory.aux) (data.aux) (methodology.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -985,9 +1008,6 @@ L3 programming layer <2024-01-04>
 
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -999,17 +1019,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25874 strings out of 474486
- 450679 string characters out of 5743755
+ 25974 strings out of 474486
+ 453263 string characters out of 5743755
  1931542 words of memory out of 5000000
- 47782 multiletter control sequences out of 15000+600000
- 585503 words of font info for 88 fonts, out of 8000000 for 9000
+ 47843 multiletter control sequences out of 15000+600000
+ 588485 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,5n,93p,1201b,5245s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,6n,93p,1201b,5245s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (1 page, 42152 bytes).
+Output written on main.pdf (5 pages, 46794 bytes).
 PDF statistics:
- 29 PDF objects out of 1000 (max. 8388607)
- 4 named destinations out of 1000 (max. 500000)
- 30721 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 50 PDF objects out of 1000 (max. 8388607)
+ 11 named destinations out of 1000 (max. 500000)
+ 34817 words of extra memory for PDF output out of 35830 (max. 10000000)
 
