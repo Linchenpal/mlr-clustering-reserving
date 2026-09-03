@@ -23,34 +23,33 @@ This extends the WP's existing Foundations material with a practical ML angle.
 
 ## Project layout
 
-```
-.
+
 ├── data/
 │   ├── raw/          # original, untouched source data (never edit in place)
 │   └── processed/    # cleaned / derived datasets used by notebooks & code
-├── notebooks/        # exploratory analysis, one notebook per stage
-├── src/
-│   ├── data/          # loading & cleaning code
-│   ├── features/      # feature engineering, incl. the clustering step
+├── notebooks/         # exploratory analysis — the "dev" space, one notebook per stage
+├── src/                # reusable code, once something from a notebook is proven out
+│   ├── data/           # loading & cleaning code
+│   ├── features/       # feature engineering, incl. the clustering step
 │   ├── models/         # reserving models that consume clustering output
 │   └── utils/          # shared helpers
 ├── reports/
-│   ├── figures/       # exported charts/plots
-│   └── summary.md     # write-ups to share back with the wider WP
-├── docs/              # background material (incl. WP navigation guide)
-└── tests/             # unit tests for src/
-```
+│   ├── figures/        # exported charts/plots
+│   └── summary.md      # living write-up to share back with the wider WP
+├── docs/               # background material (incl. WP navigation guide)
+└── tests/              # unit tests for src/
 
-Rationale: `data/raw` stays immutable (candidate sources: SPLICE simulated data,
-Canadian regulator data) so any cleaning step is reproducible; `src/features/`
-isolates the clustering logic so it can be swapped or extended independently of
-the reserving models in `src/models/`; `notebooks/` is for exploration only —
-anything reusable should graduate into `src/`.
+
+**How it fits together:** 
+raw data stays untouched in `data/raw/`, gets cleaned into
+`data/processed/`, gets explored in `notebooks/`. 
+Anything from a notebook worth reusing — like the clustering function — "graduates" into `src/`, so it can be imported anywhere instead of copy-pasted between notebooks. `reports/` and `docs/`
+are what we actually share outward with the rest of the working party.
 
 ## Getting started
 
 ```bash
-git clone <repo-url>.git
+git clone https://github.com/Linchenpal/mlr-clustering-reserving.git
 cd mlr-clustering-reserving
 pip install -r requirements.txt
 ```

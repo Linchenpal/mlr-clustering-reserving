@@ -8,9 +8,11 @@ You don't need to know Git deeply to contribute. Here's the minimum loop.
 2. Get access to the repo on GitHub (ask Lina/Sarah to add you as a collaborator,
    or fork it if it's public).
 3. **Clone it** — this downloads a full copy to your computer:
+   
    ```bash
    git clone https://github.com/<org-or-user>/mlr-clustering-reserving.git
    cd mlr-clustering-reserving
+   
    ```
 
 ## Everyday workflow
