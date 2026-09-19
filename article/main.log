@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.14)  23 JUL 2026 07:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.14)  19 SEP 2026 17:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -841,47 +841,47 @@ LaTeX Warning: Unused global option(s):
 (main.aux (theory.aux) (data.aux) (methodology.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 58.
-LaTeX Font Info:    Trying to load font information for T3+cmr on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 59.
+LaTeX Font Info:    Trying to load font information for T3+cmr on input line 59.
  (C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/tipa\t3cmr.fd
 File: t3cmr.fd 2001/12/31 TIPA font definitions
 )
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Info: Redefining \microtypecontext on input line 58.
-Package microtype Info: Applying patch `item' on input line 58.
-Package microtype Info: Applying patch `toc' on input line 58.
-Package microtype Info: Applying patch `eqnum' on input line 58.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Info: Redefining \microtypecontext on input line 59.
+Package microtype Info: Applying patch `item' on input line 59.
+Package microtype Info: Applying patch `toc' on input line 59.
+Package microtype Info: Applying patch `eqnum' on input line 59.
 
 
-Package microtype Warning: Unable to apply patch `footnote' on input line 58.
+Package microtype Warning: Unable to apply patch `footnote' on input line 59.
 
-Package microtype Info: Applying patch `verbatim' on input line 58.
-LaTeX Info: Redefining \microtypesetup on input line 58.
+Package microtype Info: Applying patch `verbatim' on input line 59.
+LaTeX Info: Redefining \microtypesetup on input line 59.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 1).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 58.
+LaTeX Info: Redefining \showhyphens on input line 59.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -912,7 +912,7 @@ Package grfext Info: Graphics extension search list:
  (C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring ON on input line 58.
+Package hyperref Info: Link coloring ON on input line 59.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: floatrow package is loaded.
@@ -961,13 +961,41 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' not found.
 
 No file main.bbl.
-Package biblatex Info: Reference section=0 on input line 58.
-Package biblatex Info: Reference segment=0 on input line 58.
+Package biblatex Info: Reference section=0 on input line 59.
+Package biblatex Info: Reference segment=0 on input line 59.
 
-LaTeX Warning: Citation 'lago_spanish_2015' on page 1 undefined on input line 71.
+LaTeX Warning: Citation 'taylor2000loss' on page 1 undefined on input line 73.
 
 
-LaTeX Warning: Citation 'wagers_agreement_2009' on page 1 undefined on input line 71.
+LaTeX Warning: Citation 'england2002stochastic' on page 1 undefined on input line 73.
+
+
+LaTeX Warning: Citation 'wuthrich2018machine' on page 1 undefined on input line 75.
+
+
+LaTeX Warning: Citation 'avanzi2021synthetic' on page 1 undefined on input line 75.
+
+
+LaTeX Warning: Citation 'avanzi2023splice' on page 1 undefined on input line 75.
+
+
+Overfull \hbox (44.84262pt too wide) in paragraph at lines 75--76
+[]\T1/ptm/m/n/10.95 (-20) Recent re-search has turned to individual-claim data and machine-learning meth-ods ([]),
+ []
+
+
+Overfull \hbox (40.78877pt too wide) in paragraph at lines 75--76
+\T1/ptm/m/n/10.95 (-20) sup-ported by sim-u-la-tors that gen-er-ate claim his-to-ries whose prop-er-ties are fully known ([];
+ []
+
+
+LaTeX Warning: Citation 'jain2010data' on page 1 undefined on input line 77.
+
+
+LaTeX Warning: Citation 'hastie2009elements' on page 1 undefined on input line 77.
+
+
+LaTeX Warning: Citation 'avanzi2023splice' on page 1 undefined on input line 79.
 
 [1
 
@@ -982,22 +1010,163 @@ Non-PDF special ignored!
 ]
 \openout2 = `data.aux'.
 
- (data.tex) [3
+ (data.tex
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4.
+ (C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
+File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `cmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+
+LaTeX Warning: Citation 'jain2010data' on page 3 undefined on input line 11.
+
+
+LaTeX Warning: Citation 'milligan1988study' on page 3 undefined on input line 11.
+
+
+LaTeX Warning: Citation 'hastie2009elements' on page 3 undefined on input line 11.
+
+
+LaTeX Warning: Citation 'kaufman2012leakage' on page 3 undefined on input line 11.
+
+
+LaTeX Warning: Citation 'tukey1977exploratory' on page 3 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'anscombe1973graphs' on page 3 undefined on input line 13.
+
+
+LaTeX Warning: Citation 'avanzi2023splice' on page 3 undefined on input line 18.
+
+
+LaTeX Warning: Citation 'avanzi2021synthetic' on page 3 undefined on input line 18.
+
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 20.
+(C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `ztmcm' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 20.
+ (C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 20.
+ (C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 20.
+ (C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 20.
+ (C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 20.
+ (C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/stmaryrd\ustmry.fd) (C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+) (C:\Users\luca9\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 20.
+ [3
 
 
 
 ]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
+
+
+LaTeX Warning: File `fig_distributions.png' not found on input line 53.
+
+
+! Package pdftex.def Error: File `fig_distributions.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.53 ...dth=0.95\textwidth]{fig_distributions.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `fig_dependence.png' not found on input line 69.
+
+
+! Package pdftex.def Error: File `fig_dependence.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 ...[width=0.95\textwidth]{fig_dependence.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[4] [5]
+
+LaTeX Warning: Citation 'hastie2009elements' on page 6 undefined on input line 76.
+
+[6]
+
+LaTeX Warning: File `fig_periods.png' not found on input line 85.
+
+
+! Package pdftex.def Error: File `fig_periods.png' not found: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 ...hics[width=0.9\textwidth]{fig_periods.png}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Citation 'kaufman2012leakage' on page 7 undefined on input line 95.
+
+[7]
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 104.
+See the caption package documentation for explanation.
+
+) [8]
 \openout2 = `methodology.aux'.
 
- (methodology.tex) [4
+ (methodology.tex) [9
 
 
 
 ]
 
-LaTeX Warning: Empty bibliography on input line 77.
+LaTeX Warning: Empty bibliography on input line 85.
 
-[5
+[10
 
 
 ] (main.aux (theory.aux) (data.aux) (methodology.aux))
@@ -1019,17 +1188,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25974 strings out of 474486
- 453263 string characters out of 5743755
- 1931542 words of memory out of 5000000
- 47843 multiletter control sequences out of 15000+600000
- 588485 words of font info for 94 fonts, out of 8000000 for 9000
+ 26653 strings out of 474486
+ 465302 string characters out of 5743755
+ 1940542 words of memory out of 5000000
+ 48246 multiletter control sequences out of 15000+600000
+ 643783 words of font info for 306 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,6n,93p,1201b,5245s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 46794 bytes).
+ 90i,10n,93p,1466b,5245s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\luca9\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt0900.pk> <C:\Users\luca9\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1095.pk><C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/luca9/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (10 pages, 121243 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
- 11 named destinations out of 1000 (max. 500000)
- 34817 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 172 PDF objects out of 1000 (max. 8388607)
+ 30 named destinations out of 1000 (max. 500000)
+ 93185 words of extra memory for PDF output out of 106986 (max. 10000000)
 

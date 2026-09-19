@@ -3057,10 +3057,27 @@
   <!-- SECTION 0 -->
   <bcf:bibdata section="0">
     <bcf:datasource type="file" datatype="bibtex" glob="false">sample.bib</bcf:datasource>
+    <bcf:datasource type="file" datatype="bibtex" glob="false">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1" intorder="1">lago_spanish_2015</bcf:citekey>
-    <bcf:citekey order="1" intorder="2">wagers_agreement_2009</bcf:citekey>
+    <bcf:citekey order="1" intorder="1">taylor2000loss</bcf:citekey>
+    <bcf:citekey order="1" intorder="2">england2002stochastic</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">wuthrich2018machine</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">avanzi2021synthetic</bcf:citekey>
+    <bcf:citekey order="3" intorder="2">avanzi2023splice</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">jain2010data</bcf:citekey>
+    <bcf:citekey order="4" intorder="2">hastie2009elements</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">avanzi2023splice</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">jain2010data</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">milligan1988study</bcf:citekey>
+    <bcf:citekey order="7" intorder="2">hastie2009elements</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">kaufman2012leakage</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">tukey1977exploratory</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">anscombe1973graphs</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">avanzi2023splice</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">avanzi2021synthetic</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">hastie2009elements</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">kaufman2012leakage</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
