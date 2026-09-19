@@ -31,6 +31,7 @@
 \usepackage{booktabs}
 \providecommand{\firstrefdash}{} %removes dash in references to examples, i.e. (1a) instead of (1-a)
 \addbibresource{sample.bib}
+\addbibresource{references.bib}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title[Title]{Title}
 \author[Author1, Author2] % LEAVE ANONYMOUS
@@ -68,7 +69,14 @@ The abstract text goes here.
 
 \section{Introduction}
 \label{intro}
-To cite: \parencite{lago_spanish_2015,wagers_agreement_2009}.
+
+Loss reserving is, at its core, an exercise in managing heterogeneity. Claims differ in size, in the delay before they are reported, in the time they take to settle, and in the pattern of payments and case-estimate revisions they generate. Traditional methods deal with this by aggregating claims into run-off triangles, segmented in advance by line of business, type of cover or accident period, and by assuming that development is homogeneous within each segment \parencite{taylor2000loss,england2002stochastic}. The segments are chosen by judgement, and the plausibility of the homogeneity assumption depends on how well that judgement was made.
+
+Recent research has turned to individual-claim data and machine-learning methods \parencite{wuthrich2018machine}, supported by simulators that generate claim histories whose properties are fully known \parencite{avanzi2021synthetic,avanzi2023splice}. Within this landscape, unsupervised clustering is an appealing tool. Rather than imposing segments, it lets the data suggest groups of claims, or of portfolio cohorts, with similar development characteristics. Such groups could support segmentation \emph{before} reserving, or help to interpret the results of a reserving analysis. This is the question we investigate: can clustering claims by their development characteristics yield segments that are useful to a reserving actuary?
+
+Clustering is, however, unforgiving in a specific way. It has no target variable, so there is no held-out error to tell us whether the result is right. K-means, hierarchical and model-based algorithms will return a partition of any data set, and that partition depends on decisions taken before the algorithm is run: what counts as an object (a claim or an occurrence period), which variables describe it, on what scale, under which distance and into how many groups \parencite{jain2010data,hastie2009elements}. Each of those decisions can be defended only with knowledge of the data. An analyst who skips the data-understanding stage does not avoid making them; the analyst makes them implicitly, and without evidence.
+
+This paper therefore treats understanding the data as the first stage of the clustering study, not as a preliminary to it. Using the SPLICE Complexity~5 portfolio \parencite{avanzi2023splice}, we validate the structure of the data, examine the distribution of the candidate features and the dependence between them, and choose the unit of analysis. Our aim is twofold: to report the features of the data that matter for reserving, and to show that each of them translates into a concrete modelling decision, from the transformation of variables to the choice of algorithm. Section~\ref{theory} sets out the theoretical background, Section~\ref{data} presents the data and the exploratory analysis, and Section~\ref{methodology} describes the clustering methodology that builds on them.
 
 \include{theory}
 \include{data}
