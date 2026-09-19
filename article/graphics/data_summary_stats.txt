@@ -1,0 +1,46 @@
+Descriptive statistics:
+             count        mean         std     min        50%         95%          99%          max
+claim_size  3663.0  166923.837  252493.019  32.248  77184.999  618723.964  1265945.015  3130789.696
+notidel     3663.0       2.143       1.619   0.010      1.743       5.372        7.425       12.126
+setldel     3663.0       9.797       8.551   0.009      7.552      27.226       37.532       56.293
+no_payment  3663.0       5.275       3.165   1.000      4.000      11.000       17.000       30.000
+
+Skewness raw:
+claim_size    3.69
+notidel       1.36
+setldel       1.37
+no_payment    2.13
+
+Skewness log1p:
+claim_size   -1.01
+notidel       0.17
+setldel      -0.31
+no_payment   -0.03
+
+Spearman:
+            claim_size  notidel  setldel  no_payment
+claim_size       1.000   -0.291    0.676       0.681
+notidel         -0.291    1.000   -0.194      -0.196
+setldel          0.676   -0.194    1.000       0.538
+no_payment       0.681   -0.196    0.538       1.000
+
+Pearson:
+            claim_size  notidel  setldel  no_payment
+claim_size       1.000   -0.226    0.453       0.385
+notidel         -0.226    1.000   -0.188      -0.180
+setldel          0.453   -0.188    1.000       0.373
+no_payment       0.385   -0.180    0.373       1.000
+
+Top 10% of claims share of total claim size: 0.456
+Top 1% of claims share of total claim size: 0.098
+Max / median claim size: 40.6
+Claims below 1,000: 116; below 100: 27
+
+Share of claims below 20,000: 0.227
+            size  median   mean
+claim_size                     
+False       2830   10.17  12.01
+True         833    1.44   2.29
+
+Period frequency: min 73, max 111, mean 91.6
+Spearman(occurrence_period, settlement delay) = -0.056
