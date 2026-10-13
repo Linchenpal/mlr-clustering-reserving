@@ -1,0 +1,5 @@
+experiment,n,ari
+without_payment_count,3663,0.5830931998729905
+without_settlement_delay,3663,0.40821586357192663
+severity_reporting_only,3663,0.407040720459125
+exclude_top_1pct_cost_diagnostic,3626,0.4323167442962632
