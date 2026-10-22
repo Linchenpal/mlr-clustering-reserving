@@ -1,2 +1,66 @@
 \section{Theoretical Background}
 \label{theory}
+
+This section links three bodies of ideas that the rest of the paper relies on: segmentation as it is practised in reserving, clustering as a data-driven way of producing segments, and the timing of information, which decides whether a segment can be used at a valuation date at all. It closes with the criteria by which we judge whether a clustering is useful to a reserving actuary.
+
+\subsection{Reserving as a segmentation problem}
+\label{sec:segmentation}
+
+Aggregate reserving methods project a triangle of cumulative amounts $C_{r,j}$, where $r$ indexes the cohort (accident, occurrence or notification period) and $j$ the development period. The chain ladder estimates development factors
+\begin{equation}
+\hat f_j = \frac{\sum_{r} C_{r,j+1}}{\sum_{r} C_{r,j}},
+\label{eq:cl}
+\end{equation}
+the sums running over the cohorts observed at both ages, and projects each cohort from its latest diagonal. The method is distribution-free, but it is not assumption-free: it treats every cohort as following the same development pattern, so that the ratio of successive cumulative amounts does not depend on the cohort \parencite{mack1993distribution,taylor2000loss}.
+
+That assumption is plausible only if the claims within the triangle are homogeneous, or if their mix is stable across cohorts. When a portfolio mixes, say, small claims that settle within a few quarters with large claims that develop for years, the aggregate factors are an average of two patterns weighted by the mix. A cohort whose mix differs from the historical average is then projected with the wrong pattern. Actuaries therefore segment before projecting, by line of business, type of cover, claim type or size band, and accept that a segment should be large enough to give credible factors \parencite{friedland2010estimating}. Segmentation is a trade-off: finer segments are more homogeneous but thinner, and thin triangles give volatile factors, particularly in the later development periods, where few cohorts are observed.
+
+Segmentation addresses heterogeneity between claims; it does not address changes over calendar time. If settlement speeds up, or if inflation accelerates, every segment's pattern shifts at once, and no partition of claims removes the resulting bias in \eqref{eq:cl}. This distinction matters for evaluation: an improvement from segmenting should be judged against errors that segmentation can in principle remove.
+
+Individual-claim reserving models avoid the triangle and model each claim's development directly \parencite{antonio2014micro,wuthrich2018machine}. Clustering sits between the two traditions. It uses individual claim information, but its output, a set of groups, can feed an aggregate method such as the chain ladder, or can define the groups within which simpler claim-level adjustments are estimated.
+
+\subsection{Clustering as data-driven segmentation}
+\label{sec:clustering}
+
+Clustering partitions $n$ objects described by feature vectors $x_1,\dots,x_n \in \mathbb{R}^p$ into groups whose members are more similar to each other than to members of other groups. We use three families of method \parencite{hastie2009elements,jain2010data}.
+
+\emph{K-means} seeks $K$ centroids $\mu_1,\dots,\mu_K$ and an assignment $c(i)$ that minimise the within-cluster sum of squares
+\begin{equation}
+W = \sum_{k=1}^{K} \sum_{i:\,c(i)=k} \lVert x_i - \mu_k \rVert^2 ,
+\label{eq:kmeans}
+\end{equation}
+usually by alternating assignment and centroid updates from several random starts \parencite{lloyd1982least,macqueen1967some}. Because $W$ is a sum of squared Euclidean distances, K-means favours compact groups of similar spread and is sensitive to the scale of the features and to extreme observations.
+
+\emph{Agglomerative hierarchical clustering} starts from singletons and merges, at each step, the pair of clusters that is closest under a linkage rule. With Ward's rule each merge is the one that increases $W$ the least \parencite{ward1963hierarchical}, so Ward and K-means optimise the same criterion, one greedily and one iteratively. The sequence of merges, displayed as a dendrogram, shows the partitions for every number of clusters at once, and large jumps in merge height suggest natural cut points. Because merges are never undone, an early merge that depends on a few observations is carried into every coarser partition.
+
+\emph{Model-based clustering} assumes that the data come from a finite mixture of distributions, typically Gaussian, and assigns each object to the component with the highest posterior probability \parencite{mclachlan2000finite}. It allows clusters of different shapes and sizes, and the number of components can be chosen by an information criterion. This makes it a natural cross-check for groups that are not compact, such as the band of quickly settled small claims found in Section~\ref{sec:dependence}.
+
+All three methods require the analyst to fix the features, their transformation and scale, the distance, and the number of clusters. None of these can be learned from a fit criterion, because a partition into more groups always reduces $W$. Internal indices that trade compactness against separation help to compare candidate numbers of clusters: the silhouette, which compares each object's average distance to its own cluster with that to the nearest other cluster \parencite{rousseeuw1987silhouettes}; the Calinski--Harabasz index, a ratio of between- to within-cluster dispersion \parencite{calinski1974dendrite}; and the Davies--Bouldin index, which penalises clusters that are wide relative to their separation \parencite{davies1979cluster}. These indices measure geometry, not usefulness. A clear geometric split need not matter for reserving, and a useful segmentation need not be geometrically well separated.
+
+\emph{Practical implication.} For a reserving actuary, a cluster is a proposed segment. Like a segment chosen by judgement, it has to be defensible: we must be able to say which features define it, why they are weighted as they are, and how sensitive the grouping is to those choices.
+
+\subsection{Information available at the valuation date}
+\label{sec:information}
+
+Reserving is done at a valuation date $\tau$, and only information available at $\tau$ can be used. At $\tau$ each claim is in one of three states: not yet reported (IBNR), reported and open (RBNS), or settled. For a reported claim the information available consists of its characteristics at notification and its transaction history up to $\tau$: payments, case-estimate revisions and their timing. Its ultimate cost, final settlement delay and final number of payments are outcomes that the reserve is meant to estimate, not inputs to it.
+
+A feature is admissible at $\tau$ if it can be computed from the data truncated at $\tau$. Admissibility can be checked mechanically: deleting every transaction after $\tau$ must leave the feature unchanged. Features that fail this test introduce leakage, in the sense of \textcite{kaufman2012leakage}. The leak can be indirect: a ``proportion paid'' computed with the ultimate cost as its denominator uses future information even though its numerator does not. This yields two distinct exercises. An \emph{ex-post} clustering of settled claims on their final outcomes describes completed claim profiles; it can motivate a segmentation but cannot assign an open claim to a segment. An \emph{ex-ante} clustering on admissible features can be used at $\tau$.
+
+Admissibility is necessary but not sufficient when the clusters are to segment a triangle. A label computed from a claim's history up to $\tau$ means different things for a claim reported last quarter and one reported thirty quarters ago, because the two have been observed for different lengths of time. Grouping cohorts by such a label mixes development ages into the definition of the segment and distorts the per-segment factors. A label used for triangle segmentation should therefore be measured at a fixed development age, for example at notification, so that it means the same thing in every cohort. Labels built on the full history at $\tau$ remain useful, but for a different purpose: describing the open claims at $\tau$, for instance to adjust their case estimates.
+
+Two further consequences follow. First, monetary features measured in nominal terms drift with inflation, so a fixed partition of nominal amounts moves later cohorts into higher groups. Such features need to be expressed relative to a contemporaneous reference before clustering. Second, the reserve for reported claims and the reserve for claims not yet reported are different problems. Clusters of reported claims say nothing directly about claims that have not yet been notified, so we evaluate them on the reported claims only, using triangles organised by notification period.
+
+\subsection{Criteria for a useful clustering}
+\label{sec:criteria}
+
+Without a target variable, the quality of a clustering has to be judged against its purpose. For reserving we assess the following five criteria.
+
+\begin{enumerate}[leftmargin=*]
+\item \emph{Interpretable, distinct development.} Clusters should differ in ways an actuary can describe, in size, speed or payment pattern, and their development patterns should differ enough for separate projection to matter. Similar patterns imply that segmentation can change little.
+\item \emph{Assignability at the valuation date.} Every feature used to define the clusters must be admissible at $\tau$, and the assignment rule fitted on past data must be applicable unchanged to new claims.
+\item \emph{Stability.} Clusters should not depend on the particular sample or period. We measure agreement between partitions with the adjusted Rand index \parencite{hubert1985comparing} and assess stability by refitting on bootstrap samples \parencite{hennig2007cluster}. Over time, a stable segmentation keeps a broadly constant mix across cohorts unless the portfolio itself changes.
+\item \emph{Credibility.} Each cluster must contain enough claims and development history to support estimation. In a triangle this means enough cohorts observed at each development age.
+\item \emph{Predictive usefulness.} The decisive test is whether the clusters improve estimates of future payments relative to an agreed baseline, assessed out of time: fit at one valuation date and score at a later one against the actual run-off. Two baselines are needed. An unsegmented method shows whether segmentation helps at all. A random partition with the same group sizes acts as a placebo, separating the effect of the clusters' content from the mechanical effect of splitting the data. Simple rule-based segmentations, such as bands of a single variable, show whether the clustering adds anything that an actuary's rule would not.
+\end{enumerate}
+
+The criteria can conflict. More clusters improve homogeneity and may improve interpretability, but reduce credibility and usually stability. We report all five, rather than a single index, so that the trade-off is visible.

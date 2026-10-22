@@ -1,0 +1,54 @@
+{
+  "standard": {
+    "validation": {
+      "n_claims": 3663,
+      "payment_count_matches": true,
+      "first_txn_at_notification": true,
+      "last_txn_at_settlement": true,
+      "final_cumpaid_equals_inflated_payments": true,
+      "covariates_present": false
+    },
+    "stability_bootstrap_ari_notif_k3": 0.962,
+    "stability_bootstrap_ari_notif_k4": 0.951,
+    "drift_max_share_shift_nominal": 0.115,
+    "drift_max_share_shift_relative": 0.038,
+    "open_claims_V40": {
+      "silhouette": {
+        "2": 0.35,
+        "3": 0.254,
+        "4": 0.27,
+        "5": 0.245,
+        "6": 0.231
+      },
+      "r2_log_future_cluster_only": 0.3202376029826528,
+      "r2_log_future_case_estimate_only": 0.18132029558996876,
+      "r2_log_future_cluster_plus_case_estimate": 0.4532952374985406
+    }
+  },
+  "covariates": {
+    "validation": {
+      "n_claims": 3663,
+      "payment_count_matches": true,
+      "first_txn_at_notification": true,
+      "last_txn_at_settlement": true,
+      "final_cumpaid_equals_inflated_payments": true,
+      "covariates_present": true
+    },
+    "stability_bootstrap_ari_notif_k3": 0.957,
+    "stability_bootstrap_ari_notif_k4": 0.95,
+    "drift_max_share_shift_nominal": 0.138,
+    "drift_max_share_shift_relative": 0.044,
+    "open_claims_V40": {
+      "silhouette": {
+        "2": 0.293,
+        "3": 0.19,
+        "4": 0.201,
+        "5": 0.213,
+        "6": 0.196
+      },
+      "r2_log_future_cluster_only": 0.013784460800061016,
+      "r2_log_future_case_estimate_only": 0.2943578452527559,
+      "r2_log_future_cluster_plus_case_estimate": 0.4136267982648667
+    }
+  }
+}

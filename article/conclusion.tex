@@ -1,0 +1,68 @@
+\section{Discussion and Conclusions}
+\label{conclusion}
+
+We asked whether clustering claims by their development characteristics yields segments that are useful to a reserving actuary. On the five SPLICE scenarios the answer depends on what the segments are used for. Clustering helps to understand a portfolio. It is not, by itself, a better way to compute a reserve.
+
+\subsection{Main findings}
+
+\begin{enumerate}[leftmargin=*]
+\item \emph{The data contain one natural split.} It separates small, quickly settled claims from the rest. Clustering recovers it without supervision, and K-means does so much more stably than Ward. Finer partitions depend on how the correlated measures of claim complexity are weighted, which is a choice the analyst must justify.
+\item \emph{Clusters do not improve a segmented chain ladder.} In none of the five scenarios is the clustered chain ladder better than random segmentations of the same sizes. This includes the scenarios without calendar-period trends. The clusters' development patterns are not different enough to pay for the loss of data in thinner triangles.
+\item \emph{Adjusting case estimates is the most reliable approach.} Factors fitted out of time on the open claims give 7--12\% error in every scenario, against 15--27\% for the paid chain ladder. Most of the gain comes from a single factor. Groups add little on average, and no more than simple bands.
+\item \emph{Groups help in three more specific roles.}
+  \begin{itemize}[leftmargin=*]
+  \item \emph{Large claims apart.} Treating the large group with adjusted case estimates is the best approach when there is an inflation shock, although a threshold rule defines the group as well as the cluster does.
+  \item \emph{Inside a model with calendar effects.} In a GLM with calendar and speed trends, group-specific development patterns reduce the error in every scenario. This is the only setting where the clusters add value consistently.
+  \item \emph{Monitoring.} Tracking the groups over time distinguishes a change in mix from a change in development speed within the groups. It raised no false alarm in the scenario without change.
+  \end{itemize}
+\item \emph{Information timing and inflation matter as much as the algorithm.} Two apparent gains in our first analysis disappeared once inflation drift was removed from the features: an improvement of the segmented chain ladder, and a cluster with a very large case-estimate shortfall. A triangle segment must also be defined at a fixed development age, otherwise it confounds claim type with time since reporting.
+\end{enumerate}
+
+\subsection{Implications for practice}
+
+For an insurer, the evidence points to using claim groups to understand and manage the portfolio, rather than as a reserving method in their own right.
+
+\begin{itemize}[leftmargin=*]
+\item \emph{Prioritise case-estimate reviews.} Groups show where case estimates are least adequate. Here, newly reported claims with no payments yet ran off at about 2.6 times their case estimate, while old claims were estimated about right. Directing claims handlers to the weakest groups improves the input data before any reserving method is applied.
+\item \emph{Monitor the portfolio.} A quarterly view of group shares and settlement speed answers a question that decides the method: has the mix of claims changed, or has the pace changed for everyone? The first calls for segmentation; the second for a method that models the trend.
+\item \emph{Identify claims to reserve separately.} Clustering can reveal and justify a group of large, slow claims for separate treatment, such as the group of about a third of the claims that accounted for 69\% of cost in Complexity~5. Once it is identified, a simple rule may define it as well.
+\item \emph{Explain reserve movements.} Groups give a concrete vocabulary for explaining changes to management, auditors and regulators, for example ``more large, slow claims were reported'' or ``case estimates on recent claims proved short''.
+\item \emph{Feed richer models.} Inside a model that accounts for calendar effects, the group is a useful variable. This suggests a role for clusters as inputs to individual-claim or neural-network models.
+\end{itemize}
+
+Whatever the use, the evaluation should be held to the five criteria of Section~\ref{sec:criteria}, which proved discriminating in practice:
+\begin{itemize}[leftmargin=*]
+\item the stability test exposed Ward's fragility;
+\item the drift check exposed the nominal-amount artefact;
+\item the credibility check flagged a 14-claim cluster;
+\item the random-group placebo showed that the apparent improvements of the segmented chain ladder were noise.
+\end{itemize}
+We recommend that any proposed clustering for reserving be reported against random segmentations of the same sizes and against the simplest rule-based alternative.
+
+\subsection{Limitations}
+
+\begin{itemize}[leftmargin=*]
+\item \emph{Simulated data.} In SPLICE the case-estimate shortfall is large but very regular across claims and over time, which makes its correction unusually effective. In real portfolios case-estimate errors are likely to be less regular, and groups that capture differences in case-estimate practice could matter more.
+\item \emph{Limited set of methods.} We used the paid chain ladder without a tail and a simple case-estimate factor that understates full development. We did not test incurred methods, Bornhuetter--Ferguson or individual-claim models. The GLM trends are linear and extrapolated, which helps where the simulated trend is linear and hurts where there is none.
+\item \emph{No IBNR.} Claims not reported by the valuation date are excluded throughout.
+\item \emph{Covariate timing.} The covariates are known from notification in the simulation, which may be optimistic for legal representation and injury severity in practice.
+\item \emph{Low power of the monitor.} With 30 observable cohorts, the monitor detects a strong change in speed but only weakly a moderate one.
+\end{itemize}
+
+\subsection{Further work}
+
+The decisive next step is to apply the same framework to real data, where case-estimate practice and claim mix are less regular than in simulation. That framework consists of:
+\begin{itemize}[leftmargin=*]
+\item valuation-date features;
+\item notification-period RBNS triangles;
+\item out-of-time evaluation;
+\item random-group placebos.
+\end{itemize}
+
+Other extensions are:
+\begin{itemize}[leftmargin=*]
+\item combining case-estimate factors with a model of calendar effects;
+\item comparing against incurred methods;
+\item adding model-based clustering to the ex-post comparison;
+\item comparing the groups with the neural-network models used elsewhere in the working party, on the same valuation date.
+\end{itemize}

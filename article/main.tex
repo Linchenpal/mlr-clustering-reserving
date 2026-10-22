@@ -36,7 +36,7 @@
 \addbibresource{sample.bib}
 \addbibresource{references.bib}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title[Title]{Title}
+\title[Clustering for Reserving]{Clustering Claims for Loss Reserving: What Segmentation Can and Cannot Do}
 \author[Author1, Author2] % LEAVE ANONYMOUS
 {\spauthor{Luca Luigi Alberici\\
   \institute{Bayes Business School}
@@ -63,11 +63,24 @@
 \maketitle
 
 \begin{abstract}
-The abstract text goes here.
+Unsupervised clustering is often proposed as a data-driven way to segment claims before reserving. We test that proposal on the simulated SPLICE portfolios: the full-complexity scenario in a standard version and in a regenerated version with claim covariates, and then all five SPLICE scenarios.
+
+An ex-post clustering of completed claims finds one natural split, between small, quickly settled claims and the rest. K-means recovers it far more stably than Ward's hierarchical method (bootstrap adjusted Rand index 0.96 against 0.49). Finer partitions depend mainly on how correlated measures of claim complexity are weighted.
+
+We then use only information available at the valuation date and backtest against the actual run-off. Segmenting a paid chain ladder with clusters never beats random segmentations of the same sizes, in any of the five scenarios. Adjusting the case estimates of open claims with factors fitted out of time is the most reliable approach: it cuts the RBNS error from about 40\% to 7--12\% with a single factor, and groups add little to it.
+
+Groups do help in three narrower roles:
+\begin{itemize}
+\item identifying large claims to reserve separately, which is the best approach under an inflation shock;
+\item refining a model that accounts for calendar-period trends;
+\item monitoring whether the claim mix or the development speed is changing.
+\end{itemize}
+
+The analysis also shows how inflation drift and the timing of information can create apparent gains. We propose five evaluation criteria and a random-segmentation placebo for any clustering used in reserving.
 \end{abstract}
 
 \begin{keywords}
-  keyword 1; keyword 2; keyword 3; keyword 4
+  loss reserving; clustering; segmentation; K-means; hierarchical clustering; chain ladder; case estimates; SPLICE
 \end{keywords}
 
 \section{Introduction}
@@ -79,11 +92,15 @@ Recent research has turned to individual-claim data and machine-learning methods
 
 Clustering is, however, unforgiving in a specific way. It has no target variable, so there is no held-out error to tell us whether the result is right. K-means, hierarchical and model-based algorithms will return a partition of any data set, and that partition depends on decisions taken before the algorithm is run: what counts as an object (a claim or an occurrence period), which variables describe it, on what scale, under which distance and into how many groups \parencite{jain2010data,hastie2009elements}. Each of those decisions can be defended only with knowledge of the data. An analyst who skips the data-understanding stage does not avoid making them; the analyst makes them implicitly, and without evidence.
 
-This paper therefore treats understanding the data as the first stage of the clustering study, not as a preliminary to it. Using the SPLICE Complexity~5 portfolio \parencite{avanzi2023splice}, we validate the structure of the data, examine the distribution of the candidate features and the dependence between them, and choose the unit of analysis. Our aim is twofold: to report the features of the data that matter for reserving, and to show that each of them translates into a concrete modelling decision, from the transformation of variables to the choice of algorithm. Section~\ref{theory} sets out the theoretical background, Section~\ref{data} presents the data and the exploratory analysis, and Section~\ref{methodology} describes the clustering methodology that builds on them.
+This paper therefore treats understanding the data as the first stage of the clustering study, not as a preliminary to it. Using the SPLICE Complexity~5 portfolio \parencite{avanzi2023splice}, we validate the structure of the data, examine the distribution of the candidate features and the dependence between them, and choose the unit of analysis. Our aim is twofold: to report the features of the data that matter for reserving, and to show that each of them translates into a concrete modelling decision, from the transformation of variables to the choice of algorithm. We then use those decisions to test how clustering can be used in reserving: to segment a chain-ladder triangle, to adjust the case estimates of open claims, to set large claims apart, to refine a model with calendar-period trends, and to monitor the portfolio. All tests use only information available at the valuation date, are scored against the actual run-off, and are repeated on all five SPLICE scenarios.
+
+Section~\ref{theory} sets out the theoretical background. Section~\ref{data} presents the data and the exploratory analysis. Section~\ref{methodology} describes the clustering and reserving experiments, and Section~\ref{results} reports their results. Section~\ref{conclusion} discusses the implications and limitations.
 
 \include{theory}
 \include{data}
 \include{methodology}
+\include{results}
+\include{conclusion}
 
 \printbibliography
 \begin{appendices}
@@ -93,7 +110,40 @@ This paper therefore treats understanding the data as the first stage of the clu
 
 
 %%%%%%
-\section{Appendix title}
+\section{Covariate data and reproducibility}
+\label{app:cov}
+
+The SynthETIC package distributes a covariate data set, \texttt{test\_covariates\_dataset}, with one label per claim for legal representation, injury severity and claimant age. It labels SynthETIC's own example portfolio of 3,624 claims, whose per-period claim counts it matches exactly. It does not label the SPLICE Complexity~5 portfolio, which has 3,663 claims, so it cannot be joined to the SPLICE files.
+
+The SPLICE repository also distributes covariate-adjusted versions of each scenario, but without the covariate labels. Regenerating them with the published script (random seed 42, SynthETIC and SPLICE version 1.1.2, R 4.3.3) gives the following results:
+\begin{itemize}[leftmargin=*]
+\item The standard Complexity~5 tables reproduce to machine precision.
+\item The covariate-adjusted tables reproduce occurrence times and claim sizes exactly.
+\item They do not reproduce notification delays, settlement delays, payments or case-estimate histories. This is presumably because the random-number stream is consumed differently between package versions.
+\end{itemize}
+
+The SPLICE generator returns the covariate labels alongside the claims, so we regenerated the covariate portfolio and exported the labels (repository script \texttt{scripts/regenerate\_splice\_cov.R}). The regenerated portfolio is deterministic and passes the relational checks of Section~\ref{sec:validation}. All covariate results in this paper use it.
+
+\begin{table}[!htbp]
+\centering
+\small
+\caption{Regenerated covariate portfolio: claims by injury severity.}
+\label{tab:cov}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Injury severity & Claims & Median claim size & Median settlement delay (quarters) \\
+\midrule
+1 & 1,902 & 33,800 & 4.9 \\
+2 & 1,108 & 74,700 & 7.6 \\
+3 & 370 & 169,000 & 9.6 \\
+4 & 190 & 282,000 & 10.3 \\
+5 & 43 & 514,000 & 15.4 \\
+6 & 50 & 28,600 & 4.1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Claims without legal representation (97) occur only with severity~1 and are much smaller than average. The claim-size relativity decreases with claimant age.
 
 \end{appendices}
 

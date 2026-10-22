@@ -1,2 +1,139 @@
 \section{Methodology}
 \label{methodology}
+
+The study has two parts. The first is an \emph{ex-post} clustering of completed claims on the baseline variables of Section~\ref{data}. It asks which groups the data contain, and how much the answer depends on the algorithm and on the analyst's choices. The second is a set of \emph{valuation-date} experiments. They ask whether groups built only from information available at the valuation date improve reserve estimates. Code for every step is in the project repository (\texttt{src/}, \texttt{scripts/}, notebooks~02 and~03).
+
+\subsection{Data versions and monetary conventions}
+\label{sec:meth-data}
+
+We use two portfolios: the standard Complexity~5 portfolio of Section~\ref{data}, and a covariate-adjusted portfolio in which claim size depends on three claim characteristics: legal representation, injury severity and claimant age. The covariate portfolio is regenerated with the SPLICE generator, because the published files neither include the covariate labels nor reproduce with current software (Appendix~\ref{app:cov}). The two portfolios share occurrence times, so both have 3,663 claims, but they are not mixed.
+
+The claim size in the claims table is expressed in constant money. The cash actually paid includes base and superimposed inflation. It is recorded per payment and accumulates to the cumulative paid amount in the incurred table. In Complexity~5 total inflated payments are 1.83 times total constant-money claim size; the ratio averages 3.7 per claim, because small claims carry the most superimposed inflation. All reserving quantities below therefore use inflated payments.
+
+\subsection{Ex-post clustering}
+\label{sec:meth-expost}
+
+The objects are the 3,663 claims, described by claim size, notification delay, settlement delay and number of payments. Following the decisions in Table~\ref{tab:decisions}, each variable is transformed by $\log(1+x)$ and standardised, and Euclidean distance is used.
+
+We fit K-means (20 random starts) and agglomerative clustering with Ward linkage for $k = 2,\dots,8$, and choose $k$ with four tools:
+\begin{itemize}[leftmargin=*]
+\item the Ward dendrogram;
+\item the silhouette;
+\item the Calinski--Harabasz index;
+\item the Davies--Bouldin index.
+\end{itemize}
+
+We compare the two algorithms' partitions with the adjusted Rand index (ARI).
+
+\emph{Stability} is measured by refitting each method on 20 bootstrap samples and computing the ARI between the bootstrap labels and the full-data labels of the drawn claims. Comparing on the drawn claims avoids having to extend a hierarchical solution to unseen points.
+
+\emph{Sensitivity to correlated features} is tested by refitting K-means on alternative feature sets and measuring the ARI against the baseline partition:
+\begin{itemize}[leftmargin=*]
+\item dropping the number of payments;
+\item dropping settlement delay;
+\item claim size and notification delay only;
+\item a single complexity index (the first principal component of size, settlement delay and number of payments) with notification delay;
+\item all four features decorrelated by principal-component whitening.
+\end{itemize}
+
+\emph{Sensitivity to extreme claims} is tested by removing the largest 1\% of claims.
+
+\subsection{Valuation-date features}
+\label{sec:meth-features}
+
+For a valuation date $\tau$ we keep the claims reported by $\tau$ and cut every transaction history at $\tau$.
+
+\emph{Features at notification} are used to segment triangles (Section~\ref{sec:information}):
+\begin{itemize}[leftmargin=*]
+\item the notification delay;
+\item the initial case estimate set at notification;
+\item in the covariate portfolio, the three covariates.
+\end{itemize}
+The nominal initial case estimate drifts with inflation: its median rises from about 40,000 in notification periods 1--10 to 88,000 in periods 31--40. We therefore divide it by the median initial estimate of claims notified in the same period. This quantity is available at $\tau$ because a period's claims are all notified by its end.
+
+\emph{Features at the valuation date} describe the open claims at $\tau$. They follow the list proposed in our working-party discussions:
+\begin{itemize}[leftmargin=*]
+\item notification delay and age since notification;
+\item cumulative paid and number of payments to date;
+\item time since the most recent payment;
+\item the current case estimate;
+\item the number of case-estimate revisions since notification and the largest absolute log revision.
+\end{itemize}
+Monetary features enter in scale-free form, relative to the claim's own initial case estimate or, for the initial estimate itself, relative to its notification period.
+
+No feature uses the ultimate claim size, the final settlement delay or the final number of payments. Admissibility is checked by an automated test: deleting every transaction after $\tau$ leaves all features unchanged.
+
+\subsection{Experiment 1: segmenting the chain ladder}
+\label{sec:meth-cl}
+
+At $\tau \in \{20, 24, 28, 32, 36, 40\}$ we build triangles of inflated cumulative paid amounts with rows indexed by \emph{notification} period. A notification cohort contains only reported claims, so the chain ladder estimates the RBNS reserve. That estimate can be compared directly with the actual payments after $\tau$ on the same claims. IBNR is excluded.
+
+Factors follow \eqref{eq:cl} without a tail. A factor estimated from fewer than five cohorts is set to one. Without this rule, a single late payment in the oldest cohort gave $\hat f_{34} = 1.43$ at $\tau = 36$ and raised the whole reserve by about 40\%. The rule is applied identically to every segment and method.
+
+A segmented estimate is the sum of chain-ladder reserves computed separately on each segment's triangle. Clusters are refitted at each $\tau$ on the claims reported by then, using notification features, with K-means or Ward and $k = 2,\dots,5$. We compare them with:
+\begin{itemize}[leftmargin=*]
+\item the unsegmented chain ladder;
+\item the outstanding case estimates;
+\item equal-count bands of the relative initial case estimate, a simple actuarial rule;
+\item random groups with the same sizes as the K-means clusters, drawn 30 times, as a placebo for the mechanical effect of splitting the data;
+\item in the covariate portfolio, segmentation by the true injury-severity groups $\{1,6\}$, $\{2\}$ and $\{3,4,5\}$.
+\end{itemize}
+
+The main metric is the total error, $100\,(\hat R - R)/R$, where $R$ is the actual RBNS run-off. We also record the sum of absolute row errors.
+
+\subsection{Experiment 2: case-estimate factors for open claims, out of time}
+\label{sec:meth-oot}
+
+The second experiment uses the clusters for a different purpose: to adjust the case estimates of open claims. At a fitting date $\tau_0$ the open claims are grouped. For each group $g$, a development factor is computed from data available at the later application date $\tau_1 = \tau_0 + 8$:
+\begin{equation}
+\hat\lambda_g = \frac{\sum_{i \in g} \bigl[ P_i(\tau_0, \tau_1] + O_i(\tau_1) \bigr]}{\sum_{i \in g} O_i(\tau_0)},
+\label{eq:lambda}
+\end{equation}
+where $P_i(\tau_0,\tau_1]$ is claim $i$'s payments in the window and $O_i(t)$ its outstanding case estimate at $t$.
+
+At $\tau_1$ the open claims are assigned to groups with the rule fitted at $\tau_0$ (the same scaler and centroids, or the same band edges). The RBNS reserve is then estimated as $\sum_g \hat\lambda_g \sum_{i \in g} O_i(\tau_1)$ and scored against the actual payments after $\tau_1$. A second automated test checks that deleting all data after $\tau_1$ leaves the estimate unchanged.
+
+The numerator of \eqref{eq:lambda} still contains case estimates at $\tau_1$ for claims that remain open. When case estimates are short, the factor therefore understates full development. The bias is common to every grouping, so comparisons between groupings remain like for like.
+
+We compare the following groupings, for $\tau_1 \in \{24,\dots,40\}$:
+\begin{itemize}[leftmargin=*]
+\item a single portfolio-wide factor;
+\item quartile bands of claim age;
+\item quartile bands of the ratio of current to initial case estimate;
+\item K-means clusters on the valuation-date features with $k = 3, 4, 6$;
+\item K-means with the covariates added, in the covariate portfolio.
+\end{itemize}
+Raw case estimates and the unsegmented paid chain ladder at $\tau_1$ are reported as reference points.
+
+\subsection{Experiment 3: other uses of groups, across the five scenarios}
+\label{sec:meth-uses}
+
+Experiments 1 and 2 use the groups to split a triangle or to adjust case estimates. Experiment 3 tests three further uses. It then repeats all of them, together with the main variants of Experiments 1 and 2, on the standard portfolios of the five SPLICE scenarios:
+\begin{itemize}[leftmargin=*]
+\item Complexity~1: simple, homogeneous claims, no inflation;
+\item Complexity~2: size-dependent delays and 2\% annual inflation;
+\item Complexity~3: settlement that speeds up over time;
+\item Complexity~4: an inflation shock at time 30;
+\item Complexity~5: the full-complexity scenario used above.
+\end{itemize}
+The valuation dates are $\tau \in \{24, 28, 32, 36, 40\}$, so that every method, including those fitted eight quarters earlier, can be evaluated at every date. Groups are K-means clusters with $k=3$ on the notification features of Section~\ref{sec:meth-features}, refitted at each $\tau$. The cluster with the largest median relative initial estimate is called the \emph{large} cluster.
+
+\emph{Monitoring.} At $\tau = 40$ we track, for each notification cohort and cluster, the cluster's share of the cohort and the share of its claims settled within eight quarters of notification. The second quantity is observable for cohorts notified up to period 32. A trend is summarised by the Spearman correlation with the notification period, and its $p$-value. The monitor is meant to distinguish a change in the mix of claims from a change in development speed that affects every group, which calls for a different reserving response (Section~\ref{sec:segmentation}).
+
+\emph{Large claims apart.} The claims of the large cluster are removed from the triangle. The remaining claims are projected with the chain ladder of Section~\ref{sec:meth-cl}. The open large claims are reserved as their case estimates times a factor \eqref{eq:lambda}, fitted at $\tau - 8$ on the open large claims of that date. As a rule-based alternative, the large group is defined instead as the same number of claims with the highest relative initial case estimate.
+
+\emph{Groups inside a model with calendar effects.} Let $X_{r,j,g}$ be the incremental inflated payments in development period $j$ of claims notified in period $r$ and belonging to group $g$, and $n_{r,g}$ the number of such claims. We fit a quasi-Poisson generalised linear model
+\begin{equation}
+\log \mathrm{E}[X_{r,j,g}] = \log n_{r,g} + a_{j,g} + \gamma\, \frac{r+j}{\tau} + \beta\, \frac{r}{\tau} \log(1+j),
+\label{eq:glm}
+\end{equation}
+where $a_{j,g}$ is a development pattern, $\gamma$ a linear calendar-period trend, and $\beta$ a trend in the speed of development across cohorts. We consider four versions:
+\begin{itemize}[leftmargin=*]
+\item without the calendar trend ($\gamma = \beta = 0$);
+\item with the calendar trend only ($\beta = 0$);
+\item with both trends;
+\item with the trends and group-specific development patterns $a_{j,g}$, against a single pattern $a_j$.
+\end{itemize}
+The trends are common to all groups. As with the chain ladder, only development periods observed in at least five cohorts are fitted and projected. The future cells are projected with the fitted trends extrapolated, and the reserve is their sum.
+
+A third automated test checks that the large-claims and GLM estimates are unchanged when all data after $\tau$ are deleted.

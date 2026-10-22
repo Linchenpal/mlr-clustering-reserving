@@ -52,6 +52,45 @@
       \verb 10.1080/00031305.1973.10478966
       \endverb
     \endentry
+    \entry{antonio2014micro}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d886a018fc75d0e8b28e876a1fdfe95a}{%
+           family={Antonio},
+           familyi={A\bibinitperiod},
+           given={Katrien},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=03d354a60e6aedd5f009bfd41dd2f8db}{%
+           family={Plat},
+           familyi={P\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d08697addb501bccb4d541acbf5213aa}
+      \strng{fullhash}{d08697addb501bccb4d541acbf5213aa}
+      \strng{bibnamehash}{d08697addb501bccb4d541acbf5213aa}
+      \strng{authorbibnamehash}{d08697addb501bccb4d541acbf5213aa}
+      \strng{authornamehash}{d08697addb501bccb4d541acbf5213aa}
+      \strng{authorfullhash}{d08697addb501bccb4d541acbf5213aa}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scandinavian Actuarial Journal}
+      \field{number}{7}
+      \field{title}{Micro-level stochastic loss reserving for general insurance}
+      \field{volume}{2014}
+      \field{year}{2014}
+      \field{pages}{649\bibrangedash 669}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1080/03461238.2012.755938
+      \endverb
+    \endentry
     \entry{avanzi2021synthetic}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=eb34a3d8df91bef99752ad8c8ca3d59b}{%
@@ -146,6 +185,84 @@
       \field{pages}{7\bibrangedash 35}
       \range{pages}{29}
     \endentry
+    \entry{calinski1974dendrite}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=74b28f30912e45b424de18f111b69b81}{%
+           family={Caliński},
+           familyi={C\bibinitperiod},
+           given={Tadeusz},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=705a0f0d8bea0216da600ed8696dcdb7}{%
+           family={Harabasz},
+           familyi={H\bibinitperiod},
+           given={Jerzy},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0353a140f42cb3b4e1be02a67a54cdb0}
+      \strng{fullhash}{0353a140f42cb3b4e1be02a67a54cdb0}
+      \strng{bibnamehash}{0353a140f42cb3b4e1be02a67a54cdb0}
+      \strng{authorbibnamehash}{0353a140f42cb3b4e1be02a67a54cdb0}
+      \strng{authornamehash}{0353a140f42cb3b4e1be02a67a54cdb0}
+      \strng{authorfullhash}{0353a140f42cb3b4e1be02a67a54cdb0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications in Statistics}
+      \field{number}{1}
+      \field{title}{A dendrite method for cluster analysis}
+      \field{volume}{3}
+      \field{year}{1974}
+      \field{pages}{1\bibrangedash 27}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1080/03610927408827101
+      \endverb
+    \endentry
+    \entry{davies1979cluster}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3e635d77b8d72bf4b91799a7c67b1c17}{%
+           family={Davies},
+           familyi={D\bibinitperiod},
+           given={David\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=95a088363005642e50919b1753b85c9e}{%
+           family={Bouldin},
+           familyi={B\bibinitperiod},
+           given={Donald\bibnamedelima W.},
+           giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4ce4c2976c5cf0d48fca53858a43efda}
+      \strng{fullhash}{4ce4c2976c5cf0d48fca53858a43efda}
+      \strng{bibnamehash}{4ce4c2976c5cf0d48fca53858a43efda}
+      \strng{authorbibnamehash}{4ce4c2976c5cf0d48fca53858a43efda}
+      \strng{authornamehash}{4ce4c2976c5cf0d48fca53858a43efda}
+      \strng{authorfullhash}{4ce4c2976c5cf0d48fca53858a43efda}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{number}{2}
+      \field{title}{A cluster separation measure}
+      \field{volume}{PAMI-1}
+      \field{year}{1979}
+      \field{pages}{224\bibrangedash 227}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/TPAMI.1979.4766909
+      \endverb
+    \endentry
     \entry{england2002stochastic}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=72864dda81fb048ab830fe67b9dcf37c}{%
@@ -181,6 +298,37 @@
       \field{year}{2002}
       \field{pages}{443\bibrangedash 518}
       \range{pages}{76}
+    \endentry
+    \entry{friedland2010estimating}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=95f246748c3e35d75a441d62d1ea4483}{%
+           family={Friedland},
+           familyi={F\bibinitperiod},
+           given={Jacqueline},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Arlington, VA}%
+      }
+      \list{publisher}{1}{%
+        {Casualty Actuarial Society}%
+      }
+      \strng{namehash}{95f246748c3e35d75a441d62d1ea4483}
+      \strng{fullhash}{95f246748c3e35d75a441d62d1ea4483}
+      \strng{bibnamehash}{95f246748c3e35d75a441d62d1ea4483}
+      \strng{authorbibnamehash}{95f246748c3e35d75a441d62d1ea4483}
+      \strng{authornamehash}{95f246748c3e35d75a441d62d1ea4483}
+      \strng{authorfullhash}{95f246748c3e35d75a441d62d1ea4483}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Estimating Unpaid Claims Using Basic Techniques}
+      \field{year}{2010}
     \endentry
     \entry{hastie2009elements}{book}{}
       \name{author}{3}{}{%
@@ -225,6 +373,78 @@
       \field{edition}{2}
       \field{title}{The Elements of Statistical Learning: Data Mining, Inference, and Prediction}
       \field{year}{2009}
+    \endentry
+    \entry{hennig2007cluster}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=29850644b1f8383ed94a4443fe60db0b}{%
+           family={Hennig},
+           familyi={H\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{29850644b1f8383ed94a4443fe60db0b}
+      \strng{fullhash}{29850644b1f8383ed94a4443fe60db0b}
+      \strng{bibnamehash}{29850644b1f8383ed94a4443fe60db0b}
+      \strng{authorbibnamehash}{29850644b1f8383ed94a4443fe60db0b}
+      \strng{authornamehash}{29850644b1f8383ed94a4443fe60db0b}
+      \strng{authorfullhash}{29850644b1f8383ed94a4443fe60db0b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computational Statistics \& Data Analysis}
+      \field{number}{1}
+      \field{title}{Cluster-wise assessment of cluster stability}
+      \field{volume}{52}
+      \field{year}{2007}
+      \field{pages}{258\bibrangedash 271}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.csda.2006.11.025
+      \endverb
+    \endentry
+    \entry{hubert1985comparing}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d5d1d02dd8d174f83c61ea441c89cba6}{%
+           family={Hubert},
+           familyi={H\bibinitperiod},
+           given={Lawrence},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=baebbb2356b9e79fc400b332e197f628}{%
+           family={Arabie},
+           familyi={A\bibinitperiod},
+           given={Phipps},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fa62d725515e6d56c25bb670992fc030}
+      \strng{fullhash}{fa62d725515e6d56c25bb670992fc030}
+      \strng{bibnamehash}{fa62d725515e6d56c25bb670992fc030}
+      \strng{authorbibnamehash}{fa62d725515e6d56c25bb670992fc030}
+      \strng{authornamehash}{fa62d725515e6d56c25bb670992fc030}
+      \strng{authorfullhash}{fa62d725515e6d56c25bb670992fc030}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Classification}
+      \field{number}{1}
+      \field{title}{Comparing partitions}
+      \field{volume}{2}
+      \field{year}{1985}
+      \field{pages}{193\bibrangedash 218}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1007/BF01908075
+      \endverb
     \endentry
     \entry{jain2010data}{article}{}
       \name{author}{1}{}{%
@@ -310,6 +530,144 @@
       \verb 10.1145/2382577.2382579
       \endverb
     \endentry
+    \entry{lloyd1982least}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=876f8afa1045b9ae3db2a8af93dda664}{%
+           family={Lloyd},
+           familyi={L\bibinitperiod},
+           given={Stuart\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{876f8afa1045b9ae3db2a8af93dda664}
+      \strng{fullhash}{876f8afa1045b9ae3db2a8af93dda664}
+      \strng{bibnamehash}{876f8afa1045b9ae3db2a8af93dda664}
+      \strng{authorbibnamehash}{876f8afa1045b9ae3db2a8af93dda664}
+      \strng{authornamehash}{876f8afa1045b9ae3db2a8af93dda664}
+      \strng{authorfullhash}{876f8afa1045b9ae3db2a8af93dda664}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Information Theory}
+      \field{number}{2}
+      \field{title}{Least squares quantization in {PCM}}
+      \field{volume}{28}
+      \field{year}{1982}
+      \field{pages}{129\bibrangedash 137}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/TIT.1982.1056489
+      \endverb
+    \endentry
+    \entry{mack1993distribution}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=72f398ff79022c4db1fc38c5746cd51a}{%
+           family={Mack},
+           familyi={M\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{72f398ff79022c4db1fc38c5746cd51a}
+      \strng{fullhash}{72f398ff79022c4db1fc38c5746cd51a}
+      \strng{bibnamehash}{72f398ff79022c4db1fc38c5746cd51a}
+      \strng{authorbibnamehash}{72f398ff79022c4db1fc38c5746cd51a}
+      \strng{authornamehash}{72f398ff79022c4db1fc38c5746cd51a}
+      \strng{authorfullhash}{72f398ff79022c4db1fc38c5746cd51a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ASTIN Bulletin}
+      \field{number}{2}
+      \field{title}{Distribution-free calculation of the standard error of chain ladder reserve estimates}
+      \field{volume}{23}
+      \field{year}{1993}
+      \field{pages}{213\bibrangedash 225}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.2143/AST.23.2.2005092
+      \endverb
+    \endentry
+    \entry{macqueen1967some}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1c80931c8f086c94a4655483e35042d3}{%
+           family={MacQueen},
+           familyi={M\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Berkeley, CA}%
+      }
+      \list{publisher}{1}{%
+        {University of California Press}%
+      }
+      \strng{namehash}{1c80931c8f086c94a4655483e35042d3}
+      \strng{fullhash}{1c80931c8f086c94a4655483e35042d3}
+      \strng{bibnamehash}{1c80931c8f086c94a4655483e35042d3}
+      \strng{authorbibnamehash}{1c80931c8f086c94a4655483e35042d3}
+      \strng{authornamehash}{1c80931c8f086c94a4655483e35042d3}
+      \strng{authorfullhash}{1c80931c8f086c94a4655483e35042d3}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability}
+      \field{title}{Some methods for classification and analysis of multivariate observations}
+      \field{volume}{1}
+      \field{year}{1967}
+      \field{pages}{281\bibrangedash 297}
+      \range{pages}{17}
+    \endentry
+    \entry{mclachlan2000finite}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=0e73df3f69a4da3254d945d6e5fcee4b}{%
+           family={McLachlan},
+           familyi={M\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=81ced3a47e1d6804272c2fd012ebe0e3}{%
+           family={Peel},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{b51a275c349b70b8821321b5f79eb9c2}
+      \strng{fullhash}{b51a275c349b70b8821321b5f79eb9c2}
+      \strng{bibnamehash}{b51a275c349b70b8821321b5f79eb9c2}
+      \strng{authorbibnamehash}{b51a275c349b70b8821321b5f79eb9c2}
+      \strng{authornamehash}{b51a275c349b70b8821321b5f79eb9c2}
+      \strng{authorfullhash}{b51a275c349b70b8821321b5f79eb9c2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Finite Mixture Models}
+      \field{year}{2000}
+    \endentry
     \entry{milligan1988study}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=b964517a7048325fd1653e0b25393870}{%
@@ -347,6 +705,38 @@
       \range{pages}{24}
       \verb{doi}
       \verb 10.1007/BF01897163
+      \endverb
+    \endentry
+    \entry{rousseeuw1987silhouettes}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=72d8129c9f4e6afddacb834fb2d8226f}{%
+           family={Rousseeuw},
+           familyi={R\bibinitperiod},
+           given={Peter\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{72d8129c9f4e6afddacb834fb2d8226f}
+      \strng{fullhash}{72d8129c9f4e6afddacb834fb2d8226f}
+      \strng{bibnamehash}{72d8129c9f4e6afddacb834fb2d8226f}
+      \strng{authorbibnamehash}{72d8129c9f4e6afddacb834fb2d8226f}
+      \strng{authornamehash}{72d8129c9f4e6afddacb834fb2d8226f}
+      \strng{authorfullhash}{72d8129c9f4e6afddacb834fb2d8226f}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational and Applied Mathematics}
+      \field{title}{Silhouettes: a graphical aid to the interpretation and validation of cluster analysis}
+      \field{volume}{20}
+      \field{year}{1987}
+      \field{pages}{53\bibrangedash 65}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/0377-0427(87)90125-7
       \endverb
     \endentry
     \entry{taylor2000loss}{book}{}
@@ -410,6 +800,39 @@
       \field{labeltitlesource}{title}
       \field{title}{Exploratory Data Analysis}
       \field{year}{1977}
+    \endentry
+    \entry{ward1963hierarchical}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=04ecd7bf44ec46c1ca87cfa8039a28c0}{%
+           family={Ward},
+           familyi={W\bibinitperiod},
+           given={Joe\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{fullhash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{bibnamehash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{authorbibnamehash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{authornamehash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{authorfullhash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{number}{301}
+      \field{title}{Hierarchical grouping to optimize an objective function}
+      \field{volume}{58}
+      \field{year}{1963}
+      \field{pages}{236\bibrangedash 244}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1080/01621459.1963.10500845
+      \endverb
     \endentry
     \entry{wuthrich2018machine}{article}{}
       \name{author}{1}{}{%
@@ -479,6 +902,45 @@
       \verb 10.1080/00031305.1973.10478966
       \endverb
     \endentry
+    \entry{antonio2014micro}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d886a018fc75d0e8b28e876a1fdfe95a}{%
+           family={Antonio},
+           familyi={A\bibinitperiod},
+           given={Katrien},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=03d354a60e6aedd5f009bfd41dd2f8db}{%
+           family={Plat},
+           familyi={P\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{d08697addb501bccb4d541acbf5213aa}
+      \strng{fullhash}{d08697addb501bccb4d541acbf5213aa}
+      \strng{bibnamehash}{d08697addb501bccb4d541acbf5213aa}
+      \strng{authorbibnamehash}{d08697addb501bccb4d541acbf5213aa}
+      \strng{authornamehash}{d08697addb501bccb4d541acbf5213aa}
+      \strng{authorfullhash}{d08697addb501bccb4d541acbf5213aa}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scandinavian Actuarial Journal}
+      \field{number}{7}
+      \field{title}{Micro-level stochastic loss reserving for general insurance}
+      \field{volume}{2014}
+      \field{year}{2014}
+      \field{pages}{649\bibrangedash 669}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1080/03461238.2012.755938
+      \endverb
+    \endentry
     \entry{avanzi2023splice}{article}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=eb34a3d8df91bef99752ad8c8ca3d59b}{%
@@ -573,6 +1035,84 @@
       \verb 10.1016/j.insmatheco.2021.06.004
       \endverb
     \endentry
+    \entry{calinski1974dendrite}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=74b28f30912e45b424de18f111b69b81}{%
+           family={Caliński},
+           familyi={C\bibinitperiod},
+           given={Tadeusz},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=705a0f0d8bea0216da600ed8696dcdb7}{%
+           family={Harabasz},
+           familyi={H\bibinitperiod},
+           given={Jerzy},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0353a140f42cb3b4e1be02a67a54cdb0}
+      \strng{fullhash}{0353a140f42cb3b4e1be02a67a54cdb0}
+      \strng{bibnamehash}{0353a140f42cb3b4e1be02a67a54cdb0}
+      \strng{authorbibnamehash}{0353a140f42cb3b4e1be02a67a54cdb0}
+      \strng{authornamehash}{0353a140f42cb3b4e1be02a67a54cdb0}
+      \strng{authorfullhash}{0353a140f42cb3b4e1be02a67a54cdb0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Communications in Statistics}
+      \field{number}{1}
+      \field{title}{A dendrite method for cluster analysis}
+      \field{volume}{3}
+      \field{year}{1974}
+      \field{pages}{1\bibrangedash 27}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1080/03610927408827101
+      \endverb
+    \endentry
+    \entry{davies1979cluster}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=3e635d77b8d72bf4b91799a7c67b1c17}{%
+           family={Davies},
+           familyi={D\bibinitperiod},
+           given={David\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=95a088363005642e50919b1753b85c9e}{%
+           family={Bouldin},
+           familyi={B\bibinitperiod},
+           given={Donald\bibnamedelima W.},
+           giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{4ce4c2976c5cf0d48fca53858a43efda}
+      \strng{fullhash}{4ce4c2976c5cf0d48fca53858a43efda}
+      \strng{bibnamehash}{4ce4c2976c5cf0d48fca53858a43efda}
+      \strng{authorbibnamehash}{4ce4c2976c5cf0d48fca53858a43efda}
+      \strng{authornamehash}{4ce4c2976c5cf0d48fca53858a43efda}
+      \strng{authorfullhash}{4ce4c2976c5cf0d48fca53858a43efda}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Pattern Analysis and Machine Intelligence}
+      \field{number}{2}
+      \field{title}{A cluster separation measure}
+      \field{volume}{PAMI-1}
+      \field{year}{1979}
+      \field{pages}{224\bibrangedash 227}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/TPAMI.1979.4766909
+      \endverb
+    \endentry
     \entry{england2002stochastic}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=72864dda81fb048ab830fe67b9dcf37c}{%
@@ -608,6 +1148,37 @@
       \field{year}{2002}
       \field{pages}{443\bibrangedash 518}
       \range{pages}{76}
+    \endentry
+    \entry{friedland2010estimating}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=95f246748c3e35d75a441d62d1ea4483}{%
+           family={Friedland},
+           familyi={F\bibinitperiod},
+           given={Jacqueline},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Arlington, VA}%
+      }
+      \list{publisher}{1}{%
+        {Casualty Actuarial Society}%
+      }
+      \strng{namehash}{95f246748c3e35d75a441d62d1ea4483}
+      \strng{fullhash}{95f246748c3e35d75a441d62d1ea4483}
+      \strng{bibnamehash}{95f246748c3e35d75a441d62d1ea4483}
+      \strng{authorbibnamehash}{95f246748c3e35d75a441d62d1ea4483}
+      \strng{authornamehash}{95f246748c3e35d75a441d62d1ea4483}
+      \strng{authorfullhash}{95f246748c3e35d75a441d62d1ea4483}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Estimating Unpaid Claims Using Basic Techniques}
+      \field{year}{2010}
     \endentry
     \entry{hastie2009elements}{book}{}
       \name{author}{3}{}{%
@@ -652,6 +1223,78 @@
       \field{edition}{2}
       \field{title}{The Elements of Statistical Learning: Data Mining, Inference, and Prediction}
       \field{year}{2009}
+    \endentry
+    \entry{hennig2007cluster}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=29850644b1f8383ed94a4443fe60db0b}{%
+           family={Hennig},
+           familyi={H\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{29850644b1f8383ed94a4443fe60db0b}
+      \strng{fullhash}{29850644b1f8383ed94a4443fe60db0b}
+      \strng{bibnamehash}{29850644b1f8383ed94a4443fe60db0b}
+      \strng{authorbibnamehash}{29850644b1f8383ed94a4443fe60db0b}
+      \strng{authornamehash}{29850644b1f8383ed94a4443fe60db0b}
+      \strng{authorfullhash}{29850644b1f8383ed94a4443fe60db0b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computational Statistics \& Data Analysis}
+      \field{number}{1}
+      \field{title}{Cluster-wise assessment of cluster stability}
+      \field{volume}{52}
+      \field{year}{2007}
+      \field{pages}{258\bibrangedash 271}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1016/j.csda.2006.11.025
+      \endverb
+    \endentry
+    \entry{hubert1985comparing}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=d5d1d02dd8d174f83c61ea441c89cba6}{%
+           family={Hubert},
+           familyi={H\bibinitperiod},
+           given={Lawrence},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=baebbb2356b9e79fc400b332e197f628}{%
+           family={Arabie},
+           familyi={A\bibinitperiod},
+           given={Phipps},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{fa62d725515e6d56c25bb670992fc030}
+      \strng{fullhash}{fa62d725515e6d56c25bb670992fc030}
+      \strng{bibnamehash}{fa62d725515e6d56c25bb670992fc030}
+      \strng{authorbibnamehash}{fa62d725515e6d56c25bb670992fc030}
+      \strng{authornamehash}{fa62d725515e6d56c25bb670992fc030}
+      \strng{authorfullhash}{fa62d725515e6d56c25bb670992fc030}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Classification}
+      \field{number}{1}
+      \field{title}{Comparing partitions}
+      \field{volume}{2}
+      \field{year}{1985}
+      \field{pages}{193\bibrangedash 218}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1007/BF01908075
+      \endverb
     \endentry
     \entry{jain2010data}{article}{}
       \name{author}{1}{}{%
@@ -737,6 +1380,144 @@
       \verb 10.1145/2382577.2382579
       \endverb
     \endentry
+    \entry{lloyd1982least}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=876f8afa1045b9ae3db2a8af93dda664}{%
+           family={Lloyd},
+           familyi={L\bibinitperiod},
+           given={Stuart\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{876f8afa1045b9ae3db2a8af93dda664}
+      \strng{fullhash}{876f8afa1045b9ae3db2a8af93dda664}
+      \strng{bibnamehash}{876f8afa1045b9ae3db2a8af93dda664}
+      \strng{authorbibnamehash}{876f8afa1045b9ae3db2a8af93dda664}
+      \strng{authornamehash}{876f8afa1045b9ae3db2a8af93dda664}
+      \strng{authorfullhash}{876f8afa1045b9ae3db2a8af93dda664}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Information Theory}
+      \field{number}{2}
+      \field{title}{Least squares quantization in {PCM}}
+      \field{volume}{28}
+      \field{year}{1982}
+      \field{pages}{129\bibrangedash 137}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/TIT.1982.1056489
+      \endverb
+    \endentry
+    \entry{mack1993distribution}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=72f398ff79022c4db1fc38c5746cd51a}{%
+           family={Mack},
+           familyi={M\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{72f398ff79022c4db1fc38c5746cd51a}
+      \strng{fullhash}{72f398ff79022c4db1fc38c5746cd51a}
+      \strng{bibnamehash}{72f398ff79022c4db1fc38c5746cd51a}
+      \strng{authorbibnamehash}{72f398ff79022c4db1fc38c5746cd51a}
+      \strng{authornamehash}{72f398ff79022c4db1fc38c5746cd51a}
+      \strng{authorfullhash}{72f398ff79022c4db1fc38c5746cd51a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ASTIN Bulletin}
+      \field{number}{2}
+      \field{title}{Distribution-free calculation of the standard error of chain ladder reserve estimates}
+      \field{volume}{23}
+      \field{year}{1993}
+      \field{pages}{213\bibrangedash 225}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.2143/AST.23.2.2005092
+      \endverb
+    \endentry
+    \entry{macqueen1967some}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1c80931c8f086c94a4655483e35042d3}{%
+           family={MacQueen},
+           familyi={M\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Berkeley, CA}%
+      }
+      \list{publisher}{1}{%
+        {University of California Press}%
+      }
+      \strng{namehash}{1c80931c8f086c94a4655483e35042d3}
+      \strng{fullhash}{1c80931c8f086c94a4655483e35042d3}
+      \strng{bibnamehash}{1c80931c8f086c94a4655483e35042d3}
+      \strng{authorbibnamehash}{1c80931c8f086c94a4655483e35042d3}
+      \strng{authornamehash}{1c80931c8f086c94a4655483e35042d3}
+      \strng{authorfullhash}{1c80931c8f086c94a4655483e35042d3}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability}
+      \field{title}{Some methods for classification and analysis of multivariate observations}
+      \field{volume}{1}
+      \field{year}{1967}
+      \field{pages}{281\bibrangedash 297}
+      \range{pages}{17}
+    \endentry
+    \entry{mclachlan2000finite}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=0e73df3f69a4da3254d945d6e5fcee4b}{%
+           family={McLachlan},
+           familyi={M\bibinitperiod},
+           given={Geoffrey},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=81ced3a47e1d6804272c2fd012ebe0e3}{%
+           family={Peel},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{b51a275c349b70b8821321b5f79eb9c2}
+      \strng{fullhash}{b51a275c349b70b8821321b5f79eb9c2}
+      \strng{bibnamehash}{b51a275c349b70b8821321b5f79eb9c2}
+      \strng{authorbibnamehash}{b51a275c349b70b8821321b5f79eb9c2}
+      \strng{authornamehash}{b51a275c349b70b8821321b5f79eb9c2}
+      \strng{authorfullhash}{b51a275c349b70b8821321b5f79eb9c2}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Finite Mixture Models}
+      \field{year}{2000}
+    \endentry
     \entry{milligan1988study}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=b964517a7048325fd1653e0b25393870}{%
@@ -774,6 +1555,38 @@
       \range{pages}{24}
       \verb{doi}
       \verb 10.1007/BF01897163
+      \endverb
+    \endentry
+    \entry{rousseeuw1987silhouettes}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=72d8129c9f4e6afddacb834fb2d8226f}{%
+           family={Rousseeuw},
+           familyi={R\bibinitperiod},
+           given={Peter\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{72d8129c9f4e6afddacb834fb2d8226f}
+      \strng{fullhash}{72d8129c9f4e6afddacb834fb2d8226f}
+      \strng{bibnamehash}{72d8129c9f4e6afddacb834fb2d8226f}
+      \strng{authorbibnamehash}{72d8129c9f4e6afddacb834fb2d8226f}
+      \strng{authornamehash}{72d8129c9f4e6afddacb834fb2d8226f}
+      \strng{authorfullhash}{72d8129c9f4e6afddacb834fb2d8226f}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational and Applied Mathematics}
+      \field{title}{Silhouettes: a graphical aid to the interpretation and validation of cluster analysis}
+      \field{volume}{20}
+      \field{year}{1987}
+      \field{pages}{53\bibrangedash 65}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/0377-0427(87)90125-7
       \endverb
     \endentry
     \entry{taylor2000loss}{book}{}
@@ -837,6 +1650,39 @@
       \field{labeltitlesource}{title}
       \field{title}{Exploratory Data Analysis}
       \field{year}{1977}
+    \endentry
+    \entry{ward1963hierarchical}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=04ecd7bf44ec46c1ca87cfa8039a28c0}{%
+           family={Ward},
+           familyi={W\bibinitperiod},
+           given={Joe\bibnamedelima H.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{fullhash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{bibnamehash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{authorbibnamehash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{authornamehash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \strng{authorfullhash}{04ecd7bf44ec46c1ca87cfa8039a28c0}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the American Statistical Association}
+      \field{number}{301}
+      \field{title}{Hierarchical grouping to optimize an objective function}
+      \field{volume}{58}
+      \field{year}{1963}
+      \field{pages}{236\bibrangedash 244}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1080/01621459.1963.10500845
+      \endverb
     \endentry
     \entry{wuthrich2018machine}{article}{}
       \name{author}{1}{}{%

@@ -3068,16 +3068,34 @@
     <bcf:citekey order="4" intorder="1">jain2010data</bcf:citekey>
     <bcf:citekey order="4" intorder="2">hastie2009elements</bcf:citekey>
     <bcf:citekey order="5" intorder="1">avanzi2023splice</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">jain2010data</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">milligan1988study</bcf:citekey>
-    <bcf:citekey order="7" intorder="2">hastie2009elements</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">kaufman2012leakage</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">tukey1977exploratory</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">anscombe1973graphs</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">avanzi2023splice</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">avanzi2021synthetic</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">hastie2009elements</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">kaufman2012leakage</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">mack1993distribution</bcf:citekey>
+    <bcf:citekey order="6" intorder="2">taylor2000loss</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">friedland2010estimating</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">antonio2014micro</bcf:citekey>
+    <bcf:citekey order="8" intorder="2">wuthrich2018machine</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">hastie2009elements</bcf:citekey>
+    <bcf:citekey order="9" intorder="2">jain2010data</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">lloyd1982least</bcf:citekey>
+    <bcf:citekey order="10" intorder="2">macqueen1967some</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">ward1963hierarchical</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">mclachlan2000finite</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">rousseeuw1987silhouettes</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">calinski1974dendrite</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">davies1979cluster</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">kaufman2012leakage</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">kaufman2012leakage</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">hubert1985comparing</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">hennig2007cluster</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">jain2010data</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">milligan1988study</bcf:citekey>
+    <bcf:citekey order="21" intorder="2">hastie2009elements</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">kaufman2012leakage</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">tukey1977exploratory</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">anscombe1973graphs</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">avanzi2023splice</bcf:citekey>
+    <bcf:citekey order="26" intorder="1">avanzi2021synthetic</bcf:citekey>
+    <bcf:citekey order="27" intorder="1">hastie2009elements</bcf:citekey>
+    <bcf:citekey order="28" intorder="1">kaufman2012leakage</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

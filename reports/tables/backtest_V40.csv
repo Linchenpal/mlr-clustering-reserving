@@ -1,0 +1,56 @@
+portfolio,method,k,estimate,actual,total_error_pct,row_abs_error_pct
+standard,Unsegmented CL,1,521979491.6,386543097.0,35.0,42.1
+standard,Unsegmented CL (no min-rows rule),1,537101727.6,386543097.0,39.0,44.5
+standard,Case estimates,0,252464901.2,386543097.0,-34.7,
+standard,"K-means [notif, nominal CE]",2,519423920.2,386543097.0,34.4,41.4
+standard,"K-means [notif, nominal CE]",3,516202124.6,386543097.0,33.5,41.0
+standard,"K-means [notif, nominal CE]",4,532406208.4,386543097.0,37.7,44.9
+standard,"K-means [notif, nominal CE]",5,527141814.3,386543097.0,36.4,44.1
+standard,K-means [notif],2,524101479.3,386543097.0,35.6,42.7
+standard,Ward [notif],2,529053129.8,386543097.0,36.9,44.0
+standard,K-means [notif],3,518068974.6,386543097.0,34.0,41.1
+standard,Ward [notif],3,523018869.4,386543097.0,35.3,42.6
+standard,K-means [notif],4,521608187.7,386543097.0,34.9,42.1
+standard,Ward [notif],4,517152662.5,386543097.0,33.8,41.2
+standard,K-means [notif],5,509158999.8,386543097.0,31.7,39.2
+standard,Ward [notif],5,514136300.2,386543097.0,33.0,40.4
+standard,Bands of initial case estimate,2,520854329.1,386543097.0,34.7,41.9
+standard,"Random groups (placebo, mean)",2,523865732.6,386543097.0,35.5,42.6
+standard,Bands of initial case estimate,3,520433595.5,386543097.0,34.6,41.8
+standard,"Random groups (placebo, mean)",3,523618964.4,386543097.0,35.5,42.5
+standard,Bands of initial case estimate,4,542849637.8,386543097.0,40.4,47.8
+standard,"Random groups (placebo, mean)",4,526433802.6,386543097.0,36.2,43.1
+standard,Bands of initial case estimate,5,547216333.2,386543097.0,41.6,48.7
+standard,"Random groups (placebo, mean)",5,529083093.4,386543097.0,36.9,43.9
+covariates,Unsegmented CL,1,494513533.8,413708178.0,19.5,33.3
+covariates,Unsegmented CL (no min-rows rule),1,512260705.1,413708178.0,23.8,35.1
+covariates,Case estimates,0,282014232.3,413708178.0,-31.8,
+covariates,"K-means [notif, nominal CE]",2,489957924.5,413708178.0,18.4,36.6
+covariates,"K-means [notif, nominal CE]",3,473439444.0,413708178.0,14.4,32.4
+covariates,"K-means [notif, nominal CE]",4,499694196.2,413708178.0,20.8,35.9
+covariates,"K-means [notif, nominal CE]",5,515618980.9,413708178.0,24.6,39.0
+covariates,K-means [notif],2,521718096.2,413708178.0,26.1,39.3
+covariates,Ward [notif],2,510914286.3,413708178.0,23.5,36.9
+covariates,K-means [notif],3,536778953.0,413708178.0,29.7,45.9
+covariates,Ward [notif],3,483504219.5,413708178.0,16.9,35.5
+covariates,K-means [notif],4,499293690.5,413708178.0,20.7,37.1
+covariates,Ward [notif],4,484752724.0,413708178.0,17.2,35.9
+covariates,K-means [notif],5,493066547.9,413708178.0,19.2,35.5
+covariates,Ward [notif],5,485561364.9,413708178.0,17.4,35.6
+covariates,K-means [notif+cov],2,493523899.6,413708178.0,19.3,33.4
+covariates,Ward [notif+cov],2,493523899.6,413708178.0,19.3,33.4
+covariates,K-means [notif+cov],3,462861834.9,413708178.0,11.9,39.3
+covariates,Ward [notif+cov],3,514771957.2,413708178.0,24.4,39.2
+covariates,K-means [notif+cov],4,526628949.9,413708178.0,27.3,43.2
+covariates,Ward [notif+cov],4,513683187.3,413708178.0,24.2,39.1
+covariates,K-means [notif+cov],5,548065379.3,413708178.0,32.5,46.4
+covariates,Ward [notif+cov],5,514785768.4,413708178.0,24.4,39.3
+covariates,Bands of initial case estimate,2,503188989.6,413708178.0,21.6,35.3
+covariates,"Random groups (placebo, mean)",2,497102911.5,413708178.0,20.2,33.8
+covariates,Bands of initial case estimate,3,528843725.3,413708178.0,27.8,41.1
+covariates,"Random groups (placebo, mean)",3,498444441.1,413708178.0,20.5,34.1
+covariates,Bands of initial case estimate,4,548496706.1,413708178.0,32.6,47.5
+covariates,"Random groups (placebo, mean)",4,502786255.7,413708178.0,21.5,34.7
+covariates,Bands of initial case estimate,5,557924525.6,413708178.0,34.9,50.3
+covariates,"Random groups (placebo, mean)",5,506965915.0,413708178.0,22.5,35.5
+covariates,Injury-severity groups (true covariate),3,472063257.6,413708178.0,14.1,38.3

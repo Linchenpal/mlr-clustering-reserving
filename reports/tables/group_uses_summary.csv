@@ -1,0 +1,15 @@
+method,C1 mean |err|,C2 mean |err|,C3 mean |err|,C4 mean |err|,C5 mean |err|,mean over scenarios
+E1 paid CL by clusters (k=3),16.9,19.4,21.1,24.1,28.8,22.1
+E1 paid CL by random groups (mean),15.1,18.8,21.7,24.0,27.2,21.4
+"E1 paid CL, unsegmented",15.0,18.6,21.7,24.5,26.7,21.3
+"E2 case-estimate factor, single",9.3,10.2,8.6,12.3,7.4,9.6
+"E2 case-estimate factors, bands",8.5,10.7,6.8,15.5,3.5,9.0
+"E2 case-estimate factors, clusters (k=4)",8.7,10.6,8.2,14.2,5.2,9.4
+E2 raw case estimates,40.2,43.5,42.4,47.4,35.9,41.9
+U4 large claims apart (cluster),10.6,8.8,10.7,9.4,14.3,10.8
+"U4 large claims apart (rule, same size)",9.2,11.2,10.2,9.1,13.4,10.6
+"U5 GLM, calendar + speed trend",20.0,25.3,25.5,33.9,14.5,23.8
+"U5 GLM, calendar + speed trend, by clusters",19.6,23.8,24.4,29.1,12.5,21.9
+"U5 GLM, calendar trend",17.4,19.4,20.2,29.7,21.1,21.6
+"U5 GLM, calendar trend, by clusters",17.7,19.4,21.3,27.2,23.0,21.7
+"U5 GLM, no calendar trend",15.6,18.2,17.7,37.6,31.0,24.0
