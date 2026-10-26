@@ -12,6 +12,12 @@
     "stability_bootstrap_ari_notif_k4": 0.951,
     "drift_max_share_shift_nominal": 0.115,
     "drift_max_share_shift_relative": 0.038,
+    "open_claims_V40_nominal_features_actual_over_ce": {
+      "0": 2.55,
+      "1": 1.14,
+      "2": 9.9,
+      "3": 1.0
+    },
     "open_claims_V40": {
       "silhouette": {
         "2": 0.35,
@@ -34,21 +40,27 @@
       "final_cumpaid_equals_inflated_payments": true,
       "covariates_present": true
     },
-    "stability_bootstrap_ari_notif_k3": 0.957,
-    "stability_bootstrap_ari_notif_k4": 0.95,
-    "drift_max_share_shift_nominal": 0.138,
-    "drift_max_share_shift_relative": 0.044,
+    "stability_bootstrap_ari_notif_k3": 0.963,
+    "stability_bootstrap_ari_notif_k4": 0.937,
+    "drift_max_share_shift_nominal": 0.118,
+    "drift_max_share_shift_relative": 0.036,
+    "open_claims_V40_nominal_features_actual_over_ce": {
+      "0": 2.37,
+      "1": 1.31,
+      "2": 10.83,
+      "3": 1.03
+    },
     "open_claims_V40": {
       "silhouette": {
-        "2": 0.293,
-        "3": 0.19,
-        "4": 0.201,
-        "5": 0.213,
-        "6": 0.196
+        "2": 0.28,
+        "3": 0.185,
+        "4": 0.198,
+        "5": 0.211,
+        "6": 0.195
       },
-      "r2_log_future_cluster_only": 0.013784460800061016,
-      "r2_log_future_case_estimate_only": 0.2943578452527559,
-      "r2_log_future_cluster_plus_case_estimate": 0.4136267982648667
+      "r2_log_future_cluster_only": 0.009268213956788562,
+      "r2_log_future_case_estimate_only": 0.2711358116628362,
+      "r2_log_future_cluster_plus_case_estimate": 0.3917022909826381
     }
   }
 }

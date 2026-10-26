@@ -48,7 +48,7 @@ def load_splice(folder: str = "complexity_5", suffix: str = "", complexity: int 
     Examples
     --------
     >>> load_splice("complexity_5")                      # standard portfolio
-    >>> load_splice("complexity_5_cov_regen", "_cov")    # regenerated, with covariates
+    >>> load_splice("complexity_5", "_cov")    # published covariate portfolio + labels
     """
     d = SPLICE_DIR / folder
     claims = _read(d / f"claim_{complexity}{suffix}.csv")

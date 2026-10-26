@@ -53,7 +53,7 @@ SEVERITY_GROUPS = {1: "low (1,6)", 6: "low (1,6)", 2: "mid (2)", 3: "high (3-5)"
 
 PORTFOLIOS = {
     "standard": ("complexity_5", ""),
-    "covariates": ("complexity_5_cov_regen", "_cov"),
+    "covariates": ("complexity_5", "_cov"),
 }
 
 
@@ -222,6 +222,15 @@ def main():
         plt.close(fig)
 
         t, info = open_claims_analysis(name, p)
+        # Sensitivity: the same clustering on NOMINAL amounts (shows the drift artefact)
+        fv = features_at_valuation(p, 40)
+        op = fv[fv["is_open"] == 1]
+        nom_cols = ["notidel", "age_since_notification", "paid_to_date", "n_payments_to_date",
+                    "time_since_last_payment", "case_estimate", "n_revisions_to_date", "max_abs_log_revision"]
+        _, lab_nom = fit_kmeans_clusters(op, 4, columns=nom_cols)
+        fut = future_payments(p, 40).loc[op.index]
+        ratio = (fut.groupby(lab_nom).sum() / op["case_estimate"].groupby(lab_nom).sum()).round(2)
+        key[name]["open_claims_V40_nominal_features_actual_over_ce"] = ratio.to_dict()
         open_tabs.append(t)
         key[name]["open_claims_V40"] = {k: (float(v) if not isinstance(v, dict) else v) for k, v in info.items()}
 

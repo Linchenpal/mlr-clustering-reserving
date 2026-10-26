@@ -1,6 +1,9 @@
 # Data (raw data should never be committed; keep it local or on shared storage)
 data/raw/*
 !data/raw/.gitkeep
+# SPLICE simulated data are public and small: keep them in the repo
+!data/raw/splice/
+data/raw/splice/complexity_5_cov_regen/
 data/processed/*
 !data/processed/.gitkeep
 

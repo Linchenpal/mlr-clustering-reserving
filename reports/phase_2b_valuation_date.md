@@ -6,24 +6,32 @@ results on simulated data; numbers will move as the design is agreed._
 _Revised 22 Oct 2026: inflation drift corrected, out-of-time test added. Some
 earlier figures changed; see §6._
 
+_Revised 26 Oct 2026: the covariate portfolio is now the **published** SPLICE
+`_cov` portfolio, with covariate labels recovered using the released package
+versions. Our earlier statement that the published files "do not reproduce" was
+wrong: it came from using the development version of SynthETIC (see §2). All
+covariate-portfolio figures below have been recomputed._
+
 Code: `src/features/valuation.py`, `src/models/chain_ladder.py`,
 `src/models/case_estimate_factors.py`, `scripts/run_valuation_experiment.py`,
 `scripts/run_open_claims_oot.py`, `notebooks/03_reserving_integration.ipynb`,
-`scripts/regenerate_splice_cov.R`. Tables in `reports/tables/`, figures in
+`scripts/export_splice_cov_labels.R`. Tables in `reports/tables/`, figures in
 `reports/figures/`. Ex-post comparison of hierarchical clustering and K-means:
 `notebooks/02_clustering_experiments.ipynb`. Theory:
 `article/theory.tex`.
 
 ## 1. Summary
 
-1. **Covariate data.** `SynthETIC::test_covariates_dataset` cannot be joined to
-   the SPLICE `_cov` files. It labels SynthETIC's own example portfolio
-   (3,624 claims), not SPLICE Complexity 5 (3,663 claims). The published SPLICE
-   `_cov` CSVs also do not reproduce with current package versions. We fixed
-   both problems by regenerating the portfolio. `SPLICE::generate_data()`
-   returns the covariate labels, so we now have a consistent portfolio with
-   legal representation, injury severity and claimant age for every claim. No
-   LLM correction is needed.
+1. **Covariate data.**
+   - `SynthETIC::test_covariates_dataset` cannot be joined to the SPLICE `_cov`
+     files: it labels SynthETIC's own example portfolio (3,624 claims), not
+     SPLICE Complexity 5 (3,663 claims).
+   - The published `_cov` files reproduce exactly with the released packages
+     (SynthETIC 1.1.1, SPLICE 1.1.2 from CRAN).
+   - `SPLICE::generate_data()` returns the covariate labels, so we exported them
+     and attached them to the published files. We now use the same data as the
+     rest of the WP, with legal representation, injury severity and claimant age
+     for every claim. No LLM correction is needed.
 2. **Valuation-date features.** Every feature on Lina's list can be
    reconstructed from SPLICE with transactions cut at V. Tests check that
    deleting all data after V leaves the features unchanged, and that deleting
@@ -38,12 +46,14 @@ Code: `src/features/valuation.py`, `src/models/chain_ladder.py`,
    range of random groups of the same sizes. Effects common to all segments
    dominate the error: the trend in settlement speed, superimposed inflation
    and the tail.
-5. **Adjusting case estimates works much better.** Group-specific
-   factors fitted 8 quarters earlier and applied out of time cut the RBNS error
-   from about −35% (raw case estimates) to about 4–6%. Paid CL errs by 14–27%
-   on average. Most of the gain comes from a single portfolio-wide factor (6–7%
-   error). Open-claim clusters improve on it by about 1.5–2.5 points, but simple
-   bands of "case estimate / initial estimate" do as well or better.
+5. **Adjusting case estimates works much better.**
+   - Factors fitted 8 quarters earlier and applied out of time cut the RBNS
+     error from 36–38% (raw case estimates) to about 4–9%. Paid CL errs by 15–27%
+     on average.
+   - Most of the gain comes from a single portfolio-wide factor (7–8% error).
+   - Open-claim clusters improve on it by about 2 points in the standard
+     portfolio, but not at all in the covariate portfolio. Simple bands of "case
+     estimate / initial estimate" do as well or better.
 6. **Ex-post comparison (notebook 02).** The data contain one natural split:
    small, quickly settled claims versus the rest. K-means is preferable to
    Ward: it scores better on every diagnostic and is far more stable (bootstrap
@@ -64,19 +74,26 @@ Code: `src/features/valuation.py`, `src/models/chain_ladder.py`,
 | | Claims | Joins to SPLICE C5? |
 |---|---|---|
 | `SynthETIC::test_covariates_dataset` | 3,624 | No. Its per-period counts match `SynthETIC::test_claim_dataset` exactly. |
-| Published SPLICE `complexity_5/*_cov.csv` | 3,663 | No labels included. |
-| **Regenerated** `complexity_5_cov_regen/` (this repo) | 3,663 | Yes: `covariates_5_cov.csv`, keyed by `claim_no`. |
+| Published SPLICE `complexity_5/*_cov.csv` | 3,663 | No labels are published. |
+| `complexity_5/covariates_5_cov.csv` (this repo) | 3,663 | Yes: labels of the published `_cov` files, keyed by `claim_no`, exported with `scripts/export_splice_cov_labels.R`. |
 
-**Reproducibility.** We checked with R 4.3.3, SynthETIC 1.1.2 and SPLICE 1.1.2,
-using seed 42 and the generation script in the SPLICE repo.
-- The standard Complexity 5 tables reproduce the published CSVs to machine
-  precision.
-- The `_cov` tables reproduce occurrence times and claim sizes exactly. They do
-  not reproduce notification delay, settlement delay, number of payments,
-  payments or incurred histories.
-- Our regenerated version is deterministic: two runs are byte-identical, and it
-  passes all relational checks.
-- Worth confirming with Nigel and Grainne that this is the issue they meant.
+**Reproducibility** (R 4.3.3, seed 42, SPLICE generation script):
+
+| Package versions | `_cov` tables vs published files | Covariate labels |
+|---|---|---|
+| SynthETIC 1.1.1 + SPLICE 1.1.2 (CRAN) | **identical** (to 1e-15), also for two calls in one session | — |
+| SynthETIC 1.1.2 (GitHub, Aug 2026 fix, not on CRAN) + SPLICE 1.1.2 | same occurrence times and claim sizes; **different** delays, payments and case estimates | identical to CRAN |
+
+- **Our earlier statement was wrong.** We said the published `_cov` files "do not
+  reproduce with current package versions". In fact they reproduce with the
+  released versions. We had unknowingly installed the development version of
+  SynthETIC, which changes the random-number stream after the covariate step.
+- **Nigel's observation:** for the same seed, the covariate and no-covariate
+  portfolios differ in everything drawn after the covariate step. This is
+  expected; the two are not mixed.
+- **Gráinne's tutorial:** its problem 1 (the seed lost with covariates) did not
+  appear in our test with the CRAN versions. It may depend on the R version;
+  to be compared with her.
 
 **The three covariates.** They are assigned at occurrence and do not change
 afterwards, so in this simulation they are available at notification. In
@@ -86,12 +103,12 @@ drives both delays.
 
 | Injury severity | Claims | Median size | Median settlement delay (q) |
 |---|---|---|---|
-| 1 | 1,902 | 33.8k | 4.9 |
-| 2 | 1,108 | 74.7k | 7.6 |
-| 3 | 370 | 169k | 9.6 |
-| 4 | 190 | 282k | 10.3 |
-| 5 | 43 | 514k | 15.4 |
-| 6 | 50 | 28.6k | 4.1 |
+| 1 | 1,902 | 33.8k | 5.3 |
+| 2 | 1,108 | 74.7k | 7.3 |
+| 3 | 370 | 169k | 10.4 |
+| 4 | 190 | 282k | 11.5 |
+| 5 | 43 | 514k | 15.2 |
+| 6 | 50 | 28.6k | 5.8 |
 
 ## 3. Data facts that matter for reserving
 
@@ -106,7 +123,7 @@ drives both delays.
   - Actual future payments on reported claims (RBNS) are 386.5m, and on IBNR
     claims 89.5m.
   - Outstanding case estimates are 252.5m, about **35% below** the RBNS
-    run-off. The shortfall is stable at 32–45% across valuation dates, which is
+    run-off. The shortfall is stable at 34–45% across valuation dates, which is
     why a single correction factor already works well (§7).
 
 ## 4. Experiment design
@@ -145,42 +162,46 @@ Mean absolute total RBNS error over the six valuation dates:
 
 | Method | Standard | Covariates |
 |---|---|---|
-| Unsegmented CL | 31.8% | 19.4% |
-| K-means, notification features, k = 3 | 33.6% | 20.0% |
-| K-means, notification features, k = 4 | 30.6% | 18.1% |
-| Ward, notification features, k = 3 | 30.5% | 17.3% |
-| K-means, notification + covariates, k = 3 | – | 17.8% |
-| True injury-severity groups | – | 17.7% |
-| Bands of relative initial case estimate, k = 3 | 32.1% | 20.2% |
-| Random groups (placebo), k = 3 | 32.2% | 19.4% |
-| Case estimates | 37.4% | 36.2% |
+| Unsegmented CL | 31.8% | 21.2% |
+| K-means, notification features, k = 3 | 33.6% | 22.7% |
+| K-means, notification features, k = 4 | 30.6% | 21.4% |
+| Ward, notification features, k = 3 | 30.5% | 20.7% |
+| K-means, notification + covariates, k = 3 | – | 23.0% |
+| True injury-severity groups | – | 20.6% |
+| Bands of relative initial case estimate, k = 3 | 32.1% | 21.6% |
+| Random groups (placebo), k = 3 | 32.2% | 21.4% |
+| Case estimates | 37.4% | 38.2% |
 
 At V = 40:
 
 | Method | Standard | Covariates |
 |---|---|---|
-| Unsegmented CL | +35.0% | +19.5% |
-| K-means, notification features, k = 3 | +34.0% | +29.7% |
-| K-means, notification + covariates, k = 3 | – | +11.9% |
-| True injury-severity groups | – | +14.1% |
-| Random groups (5th–95th percentile) | +33.9% to +37.1% | +18.2% to +22.4% |
+| Unsegmented CL | +35.0% | +28.3% |
+| K-means, notification features, k = 3 | +34.0% | +30.8% |
+| K-means, notification + covariates, k = 3 | – | +22.8% |
+| True injury-severity groups | – | +22.7% |
+| Random groups (5th–95th percentile) | +33.9% to +37.1% | +27.1% to +31.6% |
 
 Interpretation:
 - **The error is driven by effects common to all segments.** Every method moves
-  together over time, from about −45% to −57% at V = 20 up to about +30% to
-  +60% at V = 32–36. Segmenting by claim type cannot correct calendar-period
+  together over time: every segmentation underestimates by 45–59% at V = 20 and
+  overestimates from V = 32 onwards (up to 80% at V = 36 in the standard
+  portfolio). Segmenting by claim type cannot correct calendar-period
   effects.
 - **There is no robust gain from segmentation.** Most methods lie within a few
   points of unsegmented CL and of the random groups. The best result changes
   with k and with the feature version.
-- **Covariates are the one consistent signal.** Groups that use the covariates
-  (clusters with covariates, or the true severity groups) are slightly better
-  on average (17.7–17.8% against 19.4%). At V = 40 they lie below the random
-  range. The gain is small.
-- **Correction to the earlier version.** The first draft reported a 5-point
-  gain for notification clusters at V = 40 in the covariate portfolio. That
-  result used the nominal initial case estimate and does not survive the drift
-  correction (+29.7%), so we no longer claim it.
+- **Covariates help at some dates, not on average.** At V = 40, clusters with
+  covariates and the true severity groups (+22.8%, +22.7%) lie below the random
+  range. Over all dates, however, the severity groups are only 0.6 points better
+  than unsegmented CL (20.6% against 21.2%), and clusters with covariates are
+  worse (23.0%). A gain at a single date is not evidence of a useful
+  segmentation.
+- **Correction to earlier versions.** The first draft reported a 5-point gain
+  for notification clusters at V = 40 in the covariate portfolio, and the
+  version of 22 Oct a "weak but consistent" gain from covariates. Both used the
+  regenerated (development-version) covariate portfolio and neither holds on
+  the published data.
 
 ## 6. Results — open claims at V = 40 (descriptive)
 
@@ -198,12 +219,13 @@ Share of the variation in log future payments explained, in-sample:
 
 | | Standard | Covariates |
 |---|---|---|
-| Case estimate alone | 0.18 | 0.29 |
+| Case estimate alone | 0.18 | 0.27 |
 | Clusters alone | 0.32 | 0.01 |
-| Clusters + case estimate within cluster | 0.45 | 0.41 |
+| Clusters + case estimate within cluster | 0.45 | 0.39 |
 
 **Correction.** The first draft showed a cluster with an actual-to-estimate
-ratio of 9.9. It was formed on nominal amounts. With scale-free features the
+ratio of 9.9 (181 claims). It was formed on nominal amounts, and the script
+still reports it as a sensitivity (`key_numbers.json`). With scale-free features the
 ratios range from 1.0 to 2.65, and the pattern is mainly about **claim age**:
 recently reported claims are the most under-reserved, while old claims are
 reserved about right.
@@ -224,39 +246,39 @@ Total RBNS error (%), V1 = 24 … 40:
 
 | Method | Standard: mean \|error\| | Covariates: mean \|error\| |
 |---|---|---|
-| Raw case estimates | 35.9 | 35.3 |
-| Unsegmented paid CL | 26.7 | 14.0 |
-| Single factor (no groups) | 7.4 | 6.1 |
-| Bands of claim age, k = 4 | 6.3 | 5.2 |
-| Bands of case estimate / initial, k = 4 | **3.5** | 4.7 |
-| K-means open-claim clusters, k = 3 | 4.9 | 4.6 |
-| K-means open-claim clusters, k = 4 | 5.2 | 4.6 |
-| K-means open-claim clusters, k = 6 | 5.7 | 6.4 |
-| K-means + covariates, k = 4 | – | **4.5** |
+| Raw case estimates | 35.9 | 37.7 |
+| Unsegmented paid CL | 26.7 | 15.4 |
+| Single factor (no groups) | 7.4 | 7.9 |
+| Bands of claim age, k = 4 | 6.3 | **7.8** |
+| Bands of case estimate / initial, k = 4 | **3.5** | 8.6 |
+| K-means open-claim clusters, k = 3 | 4.9 | 8.3 |
+| K-means open-claim clusters, k = 4 | 5.2 | 8.0 |
+| K-means open-claim clusters, k = 6 | 5.7 | **7.8** |
+| K-means + covariates, k = 4 | – | 8.2 |
 
 Interpretation:
 - **Correcting case estimates is the big win.** Even one portfolio-wide factor
   is far better than raw case estimates or paid CL.
-- **Grouping (k = 3–4) adds a further 1.5–2.5 points** at the portfolio total;
-  k = 6 is no better than the single factor with covariates. Clusters
-  are not better than a single well-chosen rule (bands of case estimate /
-  initial estimate) in the standard portfolio, and are marginally better with
-  covariates.
+- **Grouping adds little.** In the standard portfolio, clusters (k = 3–4) add
+  2.2–2.5 points over the single factor, but bands of case estimate / initial
+  estimate do better (3.5%). In the covariate portfolio no grouping improves
+  on the single factor (7.8–8.6% against 7.9%), with or without the covariates.
 - **At claim level, groups do not help.** The median absolute log error per
-  claim is 0.50–0.55 for the single factor and 0.51–0.68 for the groupings.
+  claim is 0.52–0.55 for the single factor and 0.51–0.68 for the groupings.
   Group factors improve the total, not individual claim estimates.
-- **The errors drift negative at later dates** (−7% to −13% at V1 = 36–40).
+- **The errors drift negative at later dates** (−2% to −15% at V1 = 36–40).
   This is the expected understatement of the factor, and it is common to all
   groupings.
 
 ## 8. Stability
 
 - **Bootstrap.** Mean adjusted Rand index of K-means on notification features
-  (30 resamples) is 0.96 (k = 3) and 0.95 (k = 4) in both portfolios. Before
+  (30 resamples) is 0.96 (k = 3) in both portfolios, and 0.95 (standard) and
+  0.94 (covariates) for k = 4. Before
   the drift fix it was 0.70 and 0.86.
 - **Drift over time.** The largest change in cluster share between notification
-  periods 1–20 and 21–40 is 3.8 points (standard) and 4.4 points (covariates).
-  With nominal amounts it was 11.5 and 13.8 points. The fix also removes any
+  periods 1–20 and 21–40 is 3.8 points (standard) and 3.6 points (covariates).
+  With nominal amounts it was 11.5 and 11.8 points. The fix also removes any
   genuine change in severity mix between periods, which is a deliberate
   trade-off.
 

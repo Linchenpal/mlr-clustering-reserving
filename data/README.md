@@ -19,15 +19,20 @@ Add a short note here (or a per-dataset `.md` file) whenever a new data source i
 
 | Folder | Content | Source |
 |---|---|---|
-| `complexity_5/` | `claim_5`, `payment_5`, `incurred_5` (standard) and `*_cov` (covariate-adjusted, **no covariate labels**) | agi-lab/SPLICE `datasets/complexity_5`, seed 42 |
-| `complexity_5_cov_regen/` | covariate-adjusted portfolio **with** `covariates_5_cov.csv` (legal_rep, injury_severity, claimant_age per claim) | regenerated with `scripts/regenerate_splice_cov.R` |
+| `complexity_1/` … `complexity_4/` | `claim_k`, `payment_k`, `incurred_k` (standard portfolios) | agi-lab/SPLICE `datasets/`, seed 42 |
+| `complexity_5/` | standard tables, the published covariate tables `*_cov`, and `covariates_5_cov.csv` (legal_rep, injury_severity, claimant_age per claim, keyed by `claim_no`) | agi-lab/SPLICE `datasets/complexity_5`, seed 42; labels exported with `scripts/export_splice_cov_labels.R` |
 
 Notes:
 
-- The published `*_cov` CSVs do not reproduce with SynthETIC 1.1.2 / SPLICE 1.1.2. Claim
-  sizes and occurrence times match, but delays, payments and incurred histories do not.
-  The standard tables do reproduce exactly. Use `complexity_5_cov_regen/` whenever
-  covariate labels are needed, and do not mix it with the published `*_cov` files.
+- **Reproducibility depends on package versions.** With the CRAN releases (SynthETIC 1.1.1,
+  SPLICE 1.1.2; R 4.3.3, seed 42) the published `*_cov` files reproduce exactly. The GitHub
+  development version SynthETIC 1.1.2 (Aug 2026 fix to `simulate_covariates()`) gives the same
+  covariate labels and claim sizes but different delays, payments and case estimates. Use the
+  CRAN versions to reproduce the published data. (An earlier version of this repo used a
+  portfolio regenerated with the development version, `complexity_5_cov_regen/`; it is no
+  longer used and can be deleted.)
+- For the same seed, the covariate and standard portfolios differ in everything drawn after
+  the covariate step. Do not mix their tables.
 - `SynthETIC::test_covariates_dataset` (the `.rda` Sarah linked) labels SynthETIC's own
   example portfolio (3,624 claims), not SPLICE Complexity 5 (3,663 claims), so it cannot
   be joined to these files.
@@ -36,8 +41,8 @@ Notes:
   1.83 times total `claim_size` (3.7 times on average per claim, because small claims carry
   the most superimposed inflation). Use `payment_inflated` for reserving.
 
-To regenerate (requires R with SynthETIC and SPLICE ≥ 1.1.0):
+To re-export the covariate labels (and check the published files), with the CRAN versions:
 
 ```bash
-Rscript scripts/regenerate_splice_cov.R
+Rscript scripts/export_splice_cov_labels.R
 ```

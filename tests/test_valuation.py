@@ -70,3 +70,18 @@ def test_glm_and_large_claims_use_no_data_after_V(portfolio):
     assert np.isclose(glm_reserve(portfolio, V, speed_trend=True), glm_reserve(cut, V, speed_trend=True))
     ids = portfolio.claims["claim_no"].iloc[::7]
     assert np.allclose(large_separately(portfolio, V, ids), large_separately(cut, V, ids))
+
+
+def test_covariate_labels_join_published_cov_portfolio():
+    """Labels exported by scripts/export_splice_cov_labels.R cover every claim of the published _cov files."""
+    from src.data.splice import validate
+    p = load_splice("complexity_5", "_cov")
+    assert p.covariates is not None
+    assert len(p.covariates) == len(p.claims)
+    assert (p.covariates["claim_no"].values == p.claims["claim_no"].values).all()
+    v = validate(p)
+    assert all(v[k] for k in ("payment_count_matches", "first_txn_at_notification",
+                              "last_txn_at_settlement", "final_cumpaid_equals_inflated_payments"))
+    # unrepresented claims occur only at injury severity 1 (test_covariates_obj design)
+    cov = p.covariates
+    assert set(cov.loc[cov["legal_rep"] == "N", "injury_severity"]) == {1}

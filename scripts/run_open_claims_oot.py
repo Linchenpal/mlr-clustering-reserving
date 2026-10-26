@@ -37,7 +37,7 @@ OPEN_COLS = ["notidel", "age_since_notification", "initial_ce_rel", "paid_over_i
              "ce_over_initial_ce", "n_payments_to_date", "time_since_last_payment",
              "n_revisions_to_date", "max_abs_log_revision"]
 COV_COLS = ["injury_severity", "legal_rep_no", "claimant_age_band"]
-PORTFOLIOS = {"standard": ("complexity_5", ""), "covariates": ("complexity_5_cov_regen", "_cov")}
+PORTFOLIOS = {"standard": ("complexity_5", ""), "covariates": ("complexity_5", "_cov")}
 
 
 def methods(has_cov: bool) -> dict:
