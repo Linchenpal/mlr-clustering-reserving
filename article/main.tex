@@ -63,7 +63,7 @@
 \maketitle
 
 \begin{abstract}
-Unsupervised clustering is often proposed as a data-driven way to segment claims before reserving. We test that proposal on the simulated SPLICE portfolios: the full-complexity scenario in a standard version and in a regenerated version with claim covariates, and then all five SPLICE scenarios.
+Unsupervised clustering is often proposed as a data-driven way to segment claims before reserving. We test that proposal on the simulated SPLICE portfolios: the full-complexity scenario in its standard and covariate versions, and then all five SPLICE scenarios.
 
 An ex-post clustering of completed claims finds one natural split, between small, quickly settled claims and the rest. K-means recovers it far more stably than Ward's hierarchical method (bootstrap adjusted Rand index 0.96 against 0.49). Finer partitions depend mainly on how correlated measures of claim complexity are weighted.
 
@@ -113,32 +113,31 @@ Section~\ref{theory} sets out the theoretical background. Section~\ref{data} pre
 \section{Covariate data and reproducibility}
 \label{app:cov}
 
-The SynthETIC package distributes a covariate data set, \texttt{test\_covariates\_dataset}, with one label per claim for legal representation, injury severity and claimant age. It labels SynthETIC's own example portfolio of 3,624 claims, whose per-period claim counts it matches exactly. It does not label the SPLICE Complexity~5 portfolio, which has 3,663 claims, so it cannot be joined to the SPLICE files.
+The SPLICE repository publishes a covariate-adjusted version of each scenario, in which claim sizes depend on legal representation, injury severity and claimant age, but it does not publish the covariate assigned to each claim. The SynthETIC package distributes a covariate data set, \texttt{test\_covariates\_dataset}, but it labels SynthETIC's own example portfolio of 3,624 claims, whose per-period claim counts it matches exactly. It cannot be joined to the SPLICE Complexity~5 portfolio of 3,663 claims.
 
-The SPLICE repository also distributes covariate-adjusted versions of each scenario, but without the covariate labels. Regenerating them with the published script (random seed 42, SynthETIC and SPLICE version 1.1.2, R 4.3.3) gives the following results:
+The SPLICE generator returns the covariate labels alongside the claims, so we regenerated the covariate portfolio with the published script (random seed 42) and exported the labels (repository script \texttt{scripts/export\_splice\_cov\_labels.R}). We found the following, using R~4.3.3:
 \begin{itemize}[leftmargin=*]
-\item The standard Complexity~5 tables reproduce to machine precision.
-\item The covariate-adjusted tables reproduce occurrence times and claim sizes exactly.
-\item They do not reproduce notification delays, settlement delays, payments or case-estimate histories. This is presumably because the random-number stream is consumed differently between package versions.
+\item \emph{With the released versions} (SynthETIC 1.1.1 and SPLICE 1.1.2 from CRAN), the regenerated claim, payment and incurred tables match the published files to machine precision. This holds also when the generator is called twice in the same session. The labels we export therefore belong to the published files, and all covariate results in this paper use the published files with these labels.
+\item \emph{With the development version of SynthETIC} (1.1.2 on GitHub, which changes how the random-number state is handled in the covariate step), the covariate labels and adjusted claim sizes are identical. Notification and settlement delays, payments and case-estimate histories, however, differ from the published files. An earlier draft of this work used that version by mistake.
+\item \emph{For the same seed, the covariate and the standard portfolios differ} in everything drawn after the covariate step. This is expected, and the two should not be mixed.
 \end{itemize}
-
-The SPLICE generator returns the covariate labels alongside the claims, so we regenerated the covariate portfolio and exported the labels (repository script \texttt{scripts/regenerate\_splice\_cov.R}). The regenerated portfolio is deterministic and passes the relational checks of Section~\ref{sec:validation}. All covariate results in this paper use it.
+Simulated data sets are thus reproducible for a given set of package versions, but not across them. We recommend publishing the data with the research, or documenting the versions used.
 
 \begin{table}[!htbp]
 \centering
 \small
-\caption{Regenerated covariate portfolio: claims by injury severity.}
+\caption{Published covariate portfolio: claims by injury severity.}
 \label{tab:cov}
 \begin{tabular}{@{}lrrr@{}}
 \toprule
 Injury severity & Claims & Median claim size & Median settlement delay (quarters) \\
 \midrule
-1 & 1,902 & 33,800 & 4.9 \\
-2 & 1,108 & 74,700 & 7.6 \\
-3 & 370 & 169,000 & 9.6 \\
-4 & 190 & 282,000 & 10.3 \\
-5 & 43 & 514,000 & 15.4 \\
-6 & 50 & 28,600 & 4.1 \\
+1 & 1,902 & 33,800 & 5.3 \\
+2 & 1,108 & 74,700 & 7.3 \\
+3 & 370 & 169,000 & 10.4 \\
+4 & 190 & 282,000 & 11.5 \\
+5 & 43 & 514,000 & 15.2 \\
+6 & 50 & 28,600 & 5.8 \\
 \bottomrule
 \end{tabular}
 \end{table}

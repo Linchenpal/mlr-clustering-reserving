@@ -15,7 +15,7 @@ We asked whether clustering claims by their development characteristics yields s
   \item \emph{Inside a model with calendar effects.} In a GLM with calendar and speed trends, group-specific development patterns reduce the error in every scenario. This is the only setting where the clusters add value consistently.
   \item \emph{Monitoring.} Tracking the groups over time distinguishes a change in mix from a change in development speed within the groups. It raised no false alarm in the scenario without change.
   \end{itemize}
-\item \emph{Information timing and inflation matter as much as the algorithm.} Two apparent gains in our first analysis disappeared once inflation drift was removed from the features: an improvement of the segmented chain ladder, and a cluster with a very large case-estimate shortfall. A triangle segment must also be defined at a fixed development age, otherwise it confounds claim type with time since reporting.
+\item \emph{Information timing, inflation and evaluation design matter as much as the algorithm.} In our first analysis, a cluster built on nominal amounts appeared to show a case-estimate shortfall of almost ten times; it disappeared once inflation drift was removed from the features, which also raised the stability of the clusters from 0.70 to 0.96. Covariate-based segments that beat random groups at $\tau=40$ gave no gain over all valuation dates. A triangle segment must also be defined at a fixed development age, otherwise it confounds claim type with time since reporting.
 \end{enumerate}
 
 \subsection{Implications for practice}
@@ -35,7 +35,7 @@ Whatever the use, the evaluation should be held to the five criteria of Section~
 \item the stability test exposed Ward's fragility;
 \item the drift check exposed the nominal-amount artefact;
 \item the credibility check flagged a 14-claim cluster;
-\item the random-group placebo showed that the apparent improvements of the segmented chain ladder were noise.
+\item the random-group placebo, applied over several valuation dates, showed that the apparent improvements of the segmented chain ladder were noise.
 \end{itemize}
 We recommend that any proposed clustering for reserving be reported against random segmentations of the same sizes and against the simplest rule-based alternative.
 
@@ -47,6 +47,7 @@ We recommend that any proposed clustering for reserving be reported against rand
 \item \emph{No IBNR.} Claims not reported by the valuation date are excluded throughout.
 \item \emph{Covariate timing.} The covariates are known from notification in the simulation, which may be optimistic for legal representation and injury severity in practice.
 \item \emph{Low power of the monitor.} With 30 observable cohorts, the monitor detects a strong change in speed but only weakly a moderate one.
+\item \emph{Software versions.} Simulated portfolios depend on the package versions: the development version of SynthETIC changes every draw after the covariate step (Appendix~\ref{app:cov}). Data sets should be published, or their package versions documented, with the research.
 \end{itemize}
 
 \subsection{Further work}

@@ -63,7 +63,7 @@ At $\tau = 40$ the standard portfolio has:
 \item actual RBNS run-off of 386.5 million;
 \item outstanding case estimates of 252.5 million, 35\% short.
 \end{itemize}
-The shortfall of the case estimates is remarkably steady, between 32\% and 45\% at every valuation date in both portfolios.
+The shortfall of the case estimates is remarkably steady, between 34\% and 45\% at every valuation date in both portfolios.
 
 \begin{table}[!htbp]
 \centering
@@ -76,16 +76,16 @@ The shortfall of the case estimates is remarkably steady, between 32\% and 45\% 
 \cmidrule(lr){2-3}\cmidrule(l){4-5}
 Method & Standard & Covariates & Standard & Covariates \\
 \midrule
-Unsegmented chain ladder & 31.8 & 19.4 & 35.0 & 19.5 \\
-K-means, notification features & 33.6 & 20.0 & 34.0 & 29.7 \\
-K-means, notification features, $k=4$ & 30.6 & 18.1 & 34.9 & 20.7 \\
-Ward, notification features & 30.5 & 17.3 & 35.3 & 16.9 \\
-K-means, notification features + covariates & -- & 17.8 & -- & 11.9 \\
-True injury-severity groups & -- & 17.7 & -- & 14.1 \\
-Bands of relative initial case estimate & 32.1 & 20.2 & 34.6 & 27.8 \\
-Random groups, mean of 30 & 32.2 & 19.4 & 35.5 & 20.5 \\
-\quad 5th--95th percentile at $\tau=40$ & & & 33.9--37.1 & 18.2--22.4 \\
-Case estimates & 37.4 & 36.2 & $-34.7$ & $-31.8$ \\
+Unsegmented chain ladder & 31.8 & 21.2 & 35.0 & 28.3 \\
+K-means, notification features & 33.6 & 22.7 & 34.0 & 30.8 \\
+K-means, notification features, $k=4$ & 30.6 & 21.4 & 34.9 & 28.9 \\
+Ward, notification features & 30.5 & 20.7 & 35.3 & 29.3 \\
+K-means, notification features + covariates & -- & 23.0 & -- & 22.8 \\
+True injury-severity groups & -- & 20.6 & -- & 22.7 \\
+Bands of relative initial case estimate & 32.1 & 21.6 & 34.6 & 31.1 \\
+Random groups, mean of 30 & 32.2 & 21.4 & 35.5 & 29.2 \\
+\quad 5th--95th percentile at $\tau=40$ & & & 33.9--37.1 & 27.1--31.6 \\
+Case estimates & 37.4 & 38.2 & $-34.7$ & $-37.4$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -99,18 +99,16 @@ Case estimates & 37.4 & 36.2 & $-34.7$ & $-31.8$ \\
 
 Table~\ref{tab:cl} and Figure~\ref{fig:backtest} show three things.
 
-\emph{First, every method moves together over time.} Errors range from about $-45\%$ to $-57\%$ at $\tau=20$ up to $+30\%$ to $+60\%$ at $\tau=32$--$36$.
+\emph{First, every method moves together over time.} Every segmentation underestimates by 45--59\% at $\tau=20$ and overestimates from $\tau=32$ onwards, by up to 80\% at $\tau=36$ in the standard portfolio.
 \begin{itemize}[leftmargin=*]
 \item The early underestimates reflect the missing tail: with only 20 notification periods, late development is not yet observed.
 \item The later overestimates reflect two features of Complexity~5 that the chain ladder cannot accommodate: the steady acceleration of settlement over occurrence periods, and superimposed inflation.
 \end{itemize}
 Both are calendar-period effects, and no partition of claims removes them (Section~\ref{sec:segmentation}).
 
-\emph{Second, segmenting by clusters gives no robust gain.} In the standard portfolio every segmentation lies within a few points of the unsegmented chain ladder, and at $\tau=40$ inside the range of the random groups. The best method changes with $k$ and with the algorithm, which is what one expects of noise. The paid development patterns of the notification clusters are close to the aggregate pattern, so separate projection has little to correct. Banding the initial case estimate is no better.
+\emph{Second, segmenting by clusters gives no robust gain.} In both portfolios, clusterings on the notification features lie within a few points of the unsegmented chain ladder and of the random groups on average, and at $\tau=40$ inside the range of the random groups. The best method changes with $k$ and with the algorithm, which is what one expects of noise. The paid development patterns of the notification clusters are close to the aggregate pattern, so separate projection has little to correct. Banding the initial case estimate is no better.
 
-\emph{Third, the covariates carry a weak but consistent signal.} Segmentations that use them do slightly better on average, 17.7--17.8\% against 19.4\% for the unsegmented chain ladder. This holds both for K-means with covariates and for the true severity groups. At $\tau=40$ both lie below the range of the random groups. The size of the gain, under two points on average, is small relative to the calendar-period errors.
-
-We note one sensitivity. A version of the clusters based on the \emph{nominal} initial case estimate appeared to improve the $\tau=40$ estimate in the covariate portfolio, to $+14.4\%$. With the inflation-adjusted estimate the same configuration gives $+29.7\%$. The nominal clusters were, in part, grouping cohorts by calendar period, and the apparent gain does not survive the correction.
+\emph{Third, the covariates help at some dates but not on average.} At $\tau=40$, K-means with covariates and the true severity groups give $+22.8\%$ and $+22.7\%$, below the range of the random groups ($+27.1\%$ to $+31.6\%$). Over all six dates, however, the severity groups are only 0.6 points better than the unsegmented chain ladder (20.6\% against 21.2\%), and K-means with covariates is worse (23.0\%). A gain at a single valuation date is therefore not evidence of a useful segmentation, which is why we report the backtest over several dates.
 
 \emph{Practical implication.} When the dominant source of error is a calendar-period effect, segmenting the triangle by claim type is unlikely to help. Any claimed gain should be compared with random segmentations of the same sizes.
 
@@ -138,15 +136,15 @@ Whether that difference can be exploited is a question for the out-of-time test 
 \cmidrule(lr){2-3}\cmidrule(l){4-5}
 Method & Standard & Covariates & Standard & Covariates \\
 \midrule
-Raw case estimates & 35.9 & 35.3 & -- & -- \\
-Unsegmented paid chain ladder & 26.7 & 14.0 & -- & -- \\
-Single factor & 7.4 & 6.1 & 0.55 & 0.50 \\
-Bands of claim age ($k=4$) & 6.3 & 5.2 & 0.61 & 0.55 \\
-Bands of case estimate / initial estimate ($k=4$) & 3.5 & 4.7 & 0.64 & 0.58 \\
-K-means clusters ($k=3$) & 4.9 & 4.6 & 0.66 & 0.61 \\
-K-means clusters ($k=4$) & 5.2 & 4.6 & 0.68 & 0.63 \\
-K-means clusters ($k=6$) & 5.7 & 6.4 & 0.51 & 0.57 \\
-K-means clusters + covariates ($k=4$) & -- & 4.5 & -- & 0.61 \\
+Raw case estimates & 35.9 & 37.7 & -- & -- \\
+Unsegmented paid chain ladder & 26.7 & 15.4 & -- & -- \\
+Single factor & 7.4 & 7.9 & 0.55 & 0.52 \\
+Bands of claim age ($k=4$) & 6.3 & 7.8 & 0.61 & 0.59 \\
+Bands of case estimate / initial estimate ($k=4$) & 3.5 & 8.6 & 0.64 & 0.64 \\
+K-means clusters ($k=3$) & 4.9 & 8.3 & 0.66 & 0.64 \\
+K-means clusters ($k=4$) & 5.2 & 8.0 & 0.68 & 0.63 \\
+K-means clusters ($k=6$) & 5.7 & 7.8 & 0.51 & 0.63 \\
+K-means clusters + covariates ($k=4$) & -- & 8.2 & -- & 0.63 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -158,18 +156,20 @@ K-means clusters + covariates ($k=4$) & -- & 4.5 & -- & 0.61 \\
 \label{fig:oot}
 \end{figure}
 
-\emph{Adjusting case estimates is far more effective than segmenting the triangle.} A single portfolio-wide factor, fitted eight quarters earlier, reduces the error from about 35\% for raw case estimates to 6--7\%. That is better than the paid chain ladder in both portfolios, and the reason is the stability of the case-estimate shortfall noted above.
+\emph{Adjusting case estimates is far more effective than segmenting the triangle.} A single portfolio-wide factor, fitted eight quarters earlier, reduces the error from 36--38\% for raw case estimates to 7--8\%. That is better than the paid chain ladder in both portfolios, and the reason is the stability of the case-estimate shortfall noted above.
 
-\emph{Grouping adds a modest further improvement at portfolio level.} With $k = 3$ or 4, clusters reduce the mean error by 1.5--2.5 points relative to the single factor. A simple rule, bands of the ratio of current to initial case estimate, does as well (3.5\% and 4.7\%), so the clusters add nothing over a rule an actuary could set by hand. Six clusters are no better than the single factor in the covariate portfolio, as expected when thinner groups give noisier factors.
+\emph{Grouping adds little.} In the standard portfolio, clusters with $k = 3$ or 4 reduce the mean error by 2.2--2.5 points relative to the single factor, but a simple rule does better: bands of the ratio of current to initial case estimate give 3.5\%. In the covariate portfolio no grouping improves on the single factor (7.8--8.6\% against 7.9\%), with or without the covariates. The clusters therefore add nothing over a rule an actuary could set by hand.
 
 \emph{Groups improve the total, not individual claims.} The median absolute log error per claim is lowest for the single factor, or for six clusters in the standard portfolio, and no grouping improves it consistently.
 
-All groupings drift negative at the later dates, to between $-9\%$ and $-13\%$ at $\tau_1 = 36$ and between $-2\%$ and $-8\%$ at $\tau_1 = 40$. This is the understatement built into \eqref{eq:lambda}, and it affects them equally.
+All groupings drift negative at the later dates, to between $-6\%$ and $-13\%$ at $\tau_1 = 36$ and between $-2\%$ and $-15\%$ at $\tau_1 = 40$. This is the understatement built into \eqref{eq:lambda}, and it affects them all.
 
 \subsection{Stability of the valuation-date clusters}
 \label{sec:res-stability}
 
-Expressing the initial case estimate relative to its notification period removes most of the drift. The largest change in cluster share between notification periods 1--20 and 21--40 falls from 11.5 to 3.8 percentage points in the standard portfolio, and from 13.8 to 4.4 points in the covariate portfolio. Bootstrap stability of the notification clusters rises from 0.70 to 0.96 at $k=3$.
+Expressing the initial case estimate relative to its notification period removes most of the drift. The largest change in cluster share between notification periods 1--20 and 21--40 falls from 11.5 to 3.8 percentage points in the standard portfolio, and from 11.8 to 3.6 points in the covariate portfolio. Bootstrap stability of the notification clusters rises from 0.70 to 0.96 at $k=3$ in the standard portfolio, and is 0.96 in the covariate portfolio.
+
+Scale-free features matter for the open-claim clusters too. Clustering the open claims at $\tau=40$ on nominal amounts produces a group of 181 claims with small case estimates whose actual future payments are 9.9 times their case estimate. The group disappears with scale-free features, where the ratios range from 0.97 to 2.65 (Section~\ref{sec:res-oot}), so the extreme ratio depended on measuring amounts in nominal terms.
 
 The groups that use the covariates are the least balanced. One open-claim cluster in the covariate portfolio contains only 14 claims, those without legal representation, which fails the credibility criterion even though it is stable.
 
